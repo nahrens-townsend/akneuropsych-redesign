@@ -1,0 +1,449 @@
+import {
+  Box,
+  Flex,
+  VStack,
+  HStack,
+  Text,
+  Heading,
+  Icon,
+  Image,
+} from "@chakra-ui/react";
+import { FiActivity, FiLayers, FiHeart } from "react-icons/fi";
+import PageHero from "../components/PageHero";
+import CTABanner from "../components/CTABanner";
+import screeningImage from "../assets/images/raspopova-marina-yL96L498NDM-unsplash.jpg";
+import servicesImages from "../assets/images/services-1.jpg";
+import HeroImage from "../assets/images/pawel-czerwinski-uA5mG5kyazI-unsplash.jpg";
+
+const PILLARS = [
+  {
+    icon: FiActivity,
+    label: "Evidence-Based",
+    blurb:
+      "Assessments grounded in peer-reviewed research and established clinical best practices.",
+  },
+  {
+    icon: FiLayers,
+    label: "Comprehensive",
+    blurb:
+      "Every evaluation examines the full picture — cognition, personal history, and context.",
+  },
+  {
+    icon: FiHeart,
+    label: "Person-Centred",
+    blurb:
+      "Your goals, your story, and your lived experience guide every recommendation we make.",
+  },
+];
+
+const PRACTICE_ITEMS = [
+  {
+    label: "Assessment",
+    text: "Assessments are tailored to identify behavioural, emotional, and cognitive concerns related to your brain health, as well as provide diagnostic clarification, describe changes over time, and guide treatment recommendations.",
+  },
+  {
+    label: "Prevention",
+    text: "Individualized treatment is designed to address your unique needs and goals, the challenges or barriers that may be interfering with your best self, and your ability to live in accordance with your values.",
+  },
+  {
+    label: "Treatment",
+    text: "The prevention of illness begins with evidence-informed education and skill-building to help you optimize factors that support healthy aging (e.g. mental health, sleep, exercise, diet, stress management, etc.).",
+  },
+];
+
+export default function ServicesPage() {
+  return (
+    <main>
+      <PageHero
+        title="Our Services"
+        subtitle="Neuropsychological Care — Alberta, Canada"
+        bgImage={HeroImage}
+      />
+
+      {/* ── Intro Strip ─────────────────────────────────────────────── */}
+      <Box as="section" bg="white" py={{ base: "60px", md: "80px" }}>
+        <VStack
+          maxW="1200px"
+          mx="auto"
+          px={{ base: 4, md: 8 }}
+          spacing={0}
+          align="center"
+          textAlign="center"
+        >
+          <Text
+            fontSize={{ base: "22px", md: "32px" }}
+            fontWeight="600"
+            color="brand.textDark"
+            letterSpacing="-0.01em"
+          >
+            Science-Guided.{" "}
+            <Text as="span" color="brand.teal">
+              Compassion-Driven.
+            </Text>
+          </Text>
+
+          {/* Styled divider */}
+          <Box mt={5} mb={8}>
+            <Box
+              as="hr"
+              border="none"
+              borderTop="3px solid"
+              borderColor="brand.teal"
+              w="72px"
+              mx="auto"
+              opacity={0.7}
+            />
+          </Box>
+
+          {/* 3 icon pillars */}
+          <Flex
+            direction={{ base: "column", md: "row" }}
+            gap={{ base: 10, md: 8 }}
+            justify="center"
+            align={{ base: "center", md: "flex-start" }}
+            w="full"
+            maxW="860px"
+          >
+            {PILLARS.map((p) => (
+              <VStack key={p.label} spacing={4} flex={1} align="center">
+                <Box
+                  w={{ base: "64px", md: "86px" }}
+                  h={{ base: "64px", md: "86px" }}
+                  borderRadius="18px"
+                  bg="brand.misty"
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="center"
+                >
+                  <Icon
+                    as={p.icon}
+                    color="brand.teal"
+                    boxSize={{ base: 7, md: 10 }}
+                  />
+                </Box>
+                <Text
+                  fontWeight="600"
+                  fontSize={{ base: "18px", md: "24px" }}
+                  color="brand.textDark"
+                >
+                  {p.label}
+                </Text>
+                <Text
+                  fontSize={{ base: "16px", md: "18px" }}
+                  color="brand.textDark"
+                  opacity={0.7}
+                  lineHeight="1.7"
+                  maxW="240px"
+                  textAlign="center"
+                >
+                  {p.blurb}
+                </Text>
+              </VStack>
+            ))}
+          </Flex>
+        </VStack>
+      </Box>
+
+      {/* ── Baseline Cognitive Screening ────────────────────────────── */}
+      <Box
+        as="section"
+        position="relative"
+        overflow="hidden"
+        minH={{ base: "520px", md: "500px" }}
+      >
+        {/* Full-viewport-width background image */}
+        <Box
+          position="absolute"
+          inset={0}
+          bgImage={screeningImage}
+          bgSize="cover"
+          bgPosition="50% 61%"
+        />
+
+        {/* Mobile: uniform dark overlay for text readability */}
+        <Box
+          position="absolute"
+          inset={0}
+          bg="rgba(10,30,40,0.60)"
+          zIndex={1}
+          display={{ base: "block", lg: "none" }}
+        />
+
+        {/* Desktop left gradient: brand.misty → transparent */}
+        <Box
+          position="absolute"
+          inset={0}
+          zIndex={1}
+          display={{ base: "none", lg: "block" }}
+          style={{
+            background:
+              "linear-gradient(90deg, #2e7575 47%, rgba(36, 76, 90, 0) 100%)",
+          }}
+        />
+
+        {/* Desktop right vignette: dark → transparent (keeps quote readable) */}
+        <Box
+          position="absolute"
+          inset={0}
+          zIndex={1}
+          display={{ base: "none", lg: "block" }}
+        />
+
+        {/* Content */}
+        <Flex
+          position="relative"
+          zIndex={2}
+          maxW="1200px"
+          mx="auto"
+          px={{ base: 8, md: 12 }}
+          py={{ base: 16, md: 24 }}
+          direction={{ base: "column", lg: "row" }}
+          align="center"
+          gap={{ base: 12, lg: 0 }}
+        >
+          {/* Left: title / hr / description */}
+          <Box maxW={{ base: "100%", lg: "600px" }} flex={{ lg: "0 0 600px" }}>
+            <Text
+              fontSize="sm"
+              fontWeight="600"
+              color={{ base: "brand.seafoam", lg: "brand.teal" }}
+              letterSpacing="widest"
+              textTransform="uppercase"
+              mb={4}
+            >
+              Featured Service
+            </Text>
+
+            <Heading
+              as="h2"
+              fontSize={{ base: "26px", md: "32px" }}
+              fontWeight="600"
+              color={{ base: "white", lg: "white" }}
+              lineHeight="1.2"
+            >
+              Baseline Cognitive Screening
+            </Heading>
+
+            {/* Styled hr */}
+            <Box
+              as="hr"
+              border="none"
+              borderTop="3px solid"
+              borderColor="brand.teal"
+              w="56px"
+              my={5}
+              opacity={0.8}
+            />
+
+            <Text
+              fontSize={{ base: "15px", md: "16px" }}
+              color={{ base: "whiteAlpha.900" }}
+              opacity={{ base: 1, lg: 0.85 }}
+              lineHeight="1.8"
+            >
+              A 3-hour assessment designed to provide a detailed snapshot of
+              your current cognitive functioning. Through a series of
+              standardized, evidence-based tasks, it evaluates key areas such as
+              memory, attention, processing speed, language, and executive
+              functioning. The results help identify subtle changes that may
+              point to early signs of neurological conditions, while also
+              distinguishing between normal variations and clinically meaningful
+              concerns. Just as importantly, the assessment establishes a
+              reliable baseline, allowing for accurate comparison over time to
+              monitor the effects of injury, illness, or treatment and support
+              informed decisions about care, recovery, and next steps.
+            </Text>
+          </Box>
+
+          {/* Right: quote — desktop only */}
+          <Flex
+            flex={1}
+            justify="flex-end"
+            display={{ base: "none", lg: "flex" }}
+          >
+            <VStack spacing={5} align="flex-start" maxW="380px">
+              <Text
+                fontSize="72px"
+                lineHeight="0.6"
+                color="brand.seafoam"
+                fontWeight="600"
+                aria-hidden
+              >
+                "
+              </Text>
+              <Text
+                fontSize="18px"
+                fontStyle="italic"
+                color="white"
+                lineHeight="1.8"
+                style={{ textShadow: "0 2px 8px rgba(10,30,40,0.5)" }}
+              >
+                Understanding your cognitive baseline is not about what you
+                might lose — it is about knowing what you have to protect.
+              </Text>
+              <HStack spacing={3} align="center">
+                <Box w="32px" h="2px" bg="brand.seafoam" flexShrink={0} />
+                <Text
+                  fontSize="13px"
+                  fontWeight="600"
+                  color="whiteAlpha.800"
+                  letterSpacing="wide"
+                  style={{ textShadow: "0 1px 4px rgba(10,30,40,0.5)" }}
+                >
+                  Dr. Andrea Kilgour
+                </Text>
+              </HStack>
+            </VStack>
+          </Flex>
+        </Flex>
+      </Box>
+
+      {/* ── Why Cognitive Assessments Matter ───────────────────────── */}
+      <Box as="section" bg="white" py={{ base: "72px", md: "96px" }}>
+        <VStack
+          maxW="760px"
+          mx="auto"
+          px={{ base: 6, md: 8 }}
+          spacing={0}
+          align="center"
+        >
+          <Heading
+            as="h2"
+            fontSize={{ base: "26px", md: "34px" }}
+            fontWeight="600"
+            color="brand.textDark"
+            lineHeight="1.2"
+            letterSpacing="-0.01em"
+          >
+            Why Cognitive Assessments Matter
+          </Heading>
+
+          <Box
+            as="hr"
+            border="none"
+            borderTop="3px solid"
+            borderColor="brand.teal"
+            w="56px"
+            mt={5}
+            mb={7}
+            opacity={0.8}
+          />
+
+          <Text
+            fontSize={{ base: "15px", md: "17px" }}
+            color="brand.textDark"
+            opacity={0.85}
+            lineHeight="1.85"
+            mb={5}
+          >
+            Cognitive assessments provide an objective, comprehensive picture of
+            how your brain is functioning across key domains — memory,
+            attention, processing speed, language, and executive abilities. They
+            reveal what no single conversation or routine appointment can
+            capture.
+          </Text>
+
+          <Text
+            fontSize={{ base: "15px", md: "17px" }}
+            color="brand.textDark"
+            opacity={0.85}
+            lineHeight="1.85"
+          >
+            For some, an assessment brings clarity after years of unexplained
+            difficulties. For others, it documents a healthy baseline — an
+            anchor point that becomes invaluable if illness, injury, or aging
+            ever brings change. In every case, the results are yours: a
+            detailed, evidence-based report that empowers you, your family, and
+            your care team to plan, act, and advocate with confidence.
+          </Text>
+        </VStack>
+      </Box>
+
+      {/* ── Cornerstones of Our Practice ────────────────────────────── */}
+      <Box as="section" bg="gray.50" py={{ base: "72px", md: "96px" }}>
+        <Box maxW="1200px" mx="auto" px={{ base: 6, md: 8 }}>
+          {/* Section header */}
+          <VStack align="center" spacing={0} mb={{ base: 10, md: 14 }}>
+            <Heading
+              as="h2"
+              fontSize={{ base: "26px", md: "34px" }}
+              fontWeight="600"
+              color="brand.textDark"
+              lineHeight="1.2"
+              letterSpacing="-0.01em"
+            >
+              Cornerstones of Our Practice
+            </Heading>
+            <Box
+              as="hr"
+              border="none"
+              borderTop="3px solid"
+              borderColor="brand.teal"
+              w="56px"
+              mt={5}
+              opacity={0.8}
+            />
+          </VStack>
+
+          {/* Image + text */}
+          <Flex
+            direction={{ base: "column", lg: "row" }}
+            gap={{ base: 10, lg: 16 }}
+            align="stretch"
+          >
+            {/* Left: image */}
+            <Box
+              flex={{ lg: "0 0 42%" }}
+              borderRadius="xl"
+              overflow="hidden"
+              maxH={{ base: "320px", lg: "none" }}
+              minH={{ lg: "420px" }}
+            >
+              <Image
+                src={servicesImages}
+                alt="Dr. Andrea Kilgour"
+                w="full"
+                h="full"
+                objectFit="cover"
+                objectPosition="top center"
+                display="block"
+              />
+            </Box>
+
+            {/* Right: pillars */}
+            <VStack
+              flex={1}
+              spacing={0}
+              align="flex-start"
+              justify="center"
+              gap={5}
+            >
+              {PRACTICE_ITEMS.map((item) => (
+                <Box key={item.label}>
+                  <Text
+                    fontWeight="600"
+                    fontSize={{ base: "16px", md: "24px" }}
+                    color="brand.teal"
+                    mb={1}
+                  >
+                    {item.label}
+                  </Text>
+                  <Text
+                    fontSize={{ base: "15px", md: "16px" }}
+                    color="brand.textDark"
+                    opacity={0.85}
+                    lineHeight="1.85"
+                  >
+                    {item.text}
+                  </Text>
+                </Box>
+              ))}
+            </VStack>
+          </Flex>
+        </Box>
+      </Box>
+
+      <CTABanner />
+    </main>
+  );
+}

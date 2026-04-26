@@ -1,0 +1,135 @@
+import {
+  Box,
+  Flex,
+  VStack,
+  HStack,
+  Button,
+  Text,
+  Heading,
+  Badge,
+} from "@chakra-ui/react";
+import { FiArrowRight, FiCalendar } from "react-icons/fi";
+
+export default function HeroSection() {
+  return (
+    <Box
+      id="hero"
+      position="relative"
+      bgImage="url('https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=1920&q=80')"
+      bgSize="cover"
+      bgPosition="center"
+      overflow="hidden"
+    >
+      {/* Dark gradient overlay for text contrast */}
+      <Box
+        position="absolute"
+        inset={0}
+        bgGradient="linear(to-br, rgba(10,30,40,0.78), rgba(20,50,60,0.65))"
+        zIndex={0}
+      />
+
+      <Flex
+        maxW="1200px"
+        mx="auto"
+        px={{ base: 4, md: 8 }}
+        py={{ base: "100px", md: "148px" }}
+        direction="column"
+        align={{ base: "center", lg: "flex-start" }}
+        position="relative"
+        zIndex={1}
+      >
+        <VStack
+          align={{ base: "center", lg: "flex-start" }}
+          textAlign={{ base: "center", lg: "left" }}
+          spacing={7}
+          maxW={{ base: "100%", lg: "680px" }}
+        >
+          <Badge
+            bg="brand.seafoam"
+            color="white"
+            px={4}
+            py={1.5}
+            borderRadius="full"
+            fontSize="sm"
+            fontWeight="600"
+            letterSpacing="wide"
+          >
+            Neuropsychological Care
+          </Badge>
+
+          <Heading
+            as="h1"
+            fontSize={{ base: "40px", md: "52px", lg: "62px" }}
+            fontWeight="800"
+            lineHeight="1.1"
+            color="white"
+          >
+            Understand Your{" "}
+            <Text as="span" color="brand.seafoam">
+              Brain.
+            </Text>
+            <br />
+            Reclaim Your Life.
+          </Heading>
+
+          <Text
+            fontSize={{ base: "17px", md: "19px" }}
+            color="whiteAlpha.900"
+            lineHeight="1.75"
+            maxW="580px"
+          >
+            Comprehensive neuropsychological assessments and evidence-based
+            treatment with Dr. Kilgour — a biopsychosocial approach designed to
+            help you thrive.
+          </Text>
+
+          <Text
+            fontSize={{ base: "15px", md: "17px" }}
+            color="whiteAlpha.800"
+            lineHeight="1.8"
+            maxW="580px"
+          >
+            Whether you're navigating attention challenges, memory concerns,
+            recovery from brain injury, or seeking clarity on a recent
+            diagnosis, our practice provides a thorough and compassionate
+            evaluation process that places your story at the center of care.
+            Serving patients across Alaska with personalized treatment planning
+            rooted in the latest research.
+          </Text>
+
+          <HStack
+            spacing={4}
+            pt={2}
+            flexWrap="wrap"
+            justify={{ base: "center", lg: "flex-start" }}
+          >
+            <Button
+              as="a"
+              href="#contact"
+              variant="cta"
+              size="lg"
+              rightIcon={<FiCalendar />}
+              px={8}
+              py={6}
+              fontSize="md"
+            >
+              Book a Consultation
+            </Button>
+            <Button
+              as="a"
+              href="#services"
+              variant="ctaWhite"
+              size="lg"
+              rightIcon={<FiArrowRight />}
+              px={8}
+              py={6}
+              fontSize="md"
+            >
+              Our Services
+            </Button>
+          </HStack>
+        </VStack>
+      </Flex>
+    </Box>
+  );
+}
