@@ -12,6 +12,7 @@ import {
 } from "@chakra-ui/react";
 import { FiCheckCircle } from "react-icons/fi";
 import headshot from "../assets/images/headshot.jpg";
+import { FadeUp, FadeIn, SlideRight } from "./FadeIn";
 
 const PILLARS = [
   "Biological factors — neurological, genetic, and medical",
@@ -54,18 +55,20 @@ export default function AboutSection() {
             bg="brand.misty"
             zIndex={0}
           />
-          <Image
-            src={headshot}
-            alt="About Dr. Kilgour"
-            borderRadius="20px"
-            w="full"
-            h={{ base: "360px", lg: "520px" }}
-            objectFit="cover"
-            objectPosition="center top"
-            position="relative"
-            zIndex={1}
-            boxShadow="0 20px 56px rgba(26,44,53,0.14)"
-          />
+          <FadeIn>
+            <Image
+              src={headshot}
+              alt="About Dr. Kilgour"
+              borderRadius="20px"
+              w="full"
+              h={{ base: "360px", lg: "520px" }}
+              objectFit="cover"
+              objectPosition="center top"
+              position="relative"
+              zIndex={1}
+              boxShadow="0 20px 56px rgba(26,44,53,0.14)"
+            />
+          </FadeIn>
           <Box
             position="absolute"
             bottom="-20px"
@@ -98,94 +101,106 @@ export default function AboutSection() {
         </Box>
 
         {/* Right: Text */}
-        <VStack flex={1} align="flex-start" spacing={6}>
-          <Text
-            fontSize="sm"
-            fontWeight="700"
-            color="brand.teal"
-            letterSpacing="widest"
-            textTransform="uppercase"
-          >
-            About Dr. Kilgour
-          </Text>
+        <SlideRight style={{ flex: 1 }}>
+          <VStack align="flex-start" spacing={6}>
+            <FadeUp delay={0.05}>
+              <Text
+                fontSize="sm"
+                fontWeight="700"
+                color="brand.teal"
+                letterSpacing="widest"
+                textTransform="uppercase"
+              >
+                About Dr. Kilgour
+              </Text>
+            </FadeUp>
 
-          <Heading
-            fontSize={{ base: "28px", md: "36px" }}
-            fontWeight="800"
-            color="brand.textDark"
-            lineHeight="1.2"
-          >
-            A Biopsychosocial Approach to Brain Health
-          </Heading>
+            <FadeUp delay={0.12}>
+              <Heading
+                fontSize={{ base: "28px", md: "36px" }}
+                fontWeight="800"
+                color="brand.textDark"
+                lineHeight="1.2"
+              >
+                A Biopsychosocial Approach to Brain Health
+              </Heading>
+            </FadeUp>
 
-          <Text
-            fontSize="16px"
-            color="brand.textDark"
-            opacity={0.8}
-            lineHeight="1.75"
-          >
-            Dr. Kilgour is a registered neuropsychologist with over 15 years of
-            experience helping individuals understand, manage, and recover from
-            complex neurological and psychological challenges. Her practice is
-            built on the belief that the brain cannot be understood in
-            isolation.
-          </Text>
+            <FadeUp delay={0.18}>
+              <Text
+                fontSize="16px"
+                color="brand.textDark"
+                opacity={0.8}
+                lineHeight="1.75"
+              >
+                Dr. Kilgour is a registered neuropsychologist with over 15 years
+                of experience helping individuals understand, manage, and recover
+                from complex neurological and psychological challenges. Her
+                practice is built on the belief that the brain cannot be
+                understood in isolation.
+              </Text>
+            </FadeUp>
 
-          <Box>
-            <Text fontWeight="700" color="brand.textDark" mb={3}>
-              The Biopsychosocial Model
-            </Text>
-            <List spacing={3}>
-              {PILLARS.map((p) => (
-                <ListItem key={p} display="flex" alignItems="flex-start">
-                  <ListIcon
-                    as={FiCheckCircle}
-                    color="brand.teal"
-                    mt="3px"
-                    boxSize={5}
-                  />
-                  <Text
-                    fontSize="15px"
-                    color="brand.textDark"
-                    opacity={0.8}
-                    lineHeight="1.6"
-                  >
-                    {p}
-                  </Text>
-                </ListItem>
-              ))}
-            </List>
-          </Box>
+            <FadeUp delay={0.24}>
+              <Box>
+                <Text fontWeight="700" color="brand.textDark" mb={3}>
+                  The Biopsychosocial Model
+                </Text>
+                <List spacing={3}>
+                  {PILLARS.map((p) => (
+                    <ListItem key={p} display="flex" alignItems="flex-start">
+                      <ListIcon
+                        as={FiCheckCircle}
+                        color="brand.teal"
+                        mt="3px"
+                        boxSize={5}
+                      />
+                      <Text
+                        fontSize="15px"
+                        color="brand.textDark"
+                        opacity={0.8}
+                        lineHeight="1.6"
+                      >
+                        {p}
+                      </Text>
+                    </ListItem>
+                  ))}
+                </List>
+              </Box>
+            </FadeUp>
 
-          <Box
-            bg="white"
-            border="1.5px solid"
-            borderColor="gray.100"
-            borderRadius="16px"
-            p={5}
-            w="full"
-          >
-            <Text fontWeight="700" color="brand.textDark" mb={3} fontSize="sm">
-              Credentials &amp; Memberships
-            </Text>
-            <VStack align="flex-start" spacing={2}>
-              {CREDENTIALS.map((c) => (
-                <HStack key={c} spacing={2}>
-                  <Box
-                    w="6px"
-                    h="6px"
-                    borderRadius="full"
-                    bg="brand.seafoam"
-                    flexShrink={0}
-                  />
-                  <Text fontSize="13px" color="brand.textDark" opacity={0.75}>
-                    {c}
-                  </Text>
-                </HStack>
-              ))}
-            </VStack>
-          </Box>
-        </VStack>
+            <FadeUp delay={0.30}>
+              <Box
+                bg="white"
+                border="1.5px solid"
+                borderColor="gray.100"
+                borderRadius="16px"
+                p={5}
+                w="full"
+              >
+                <Text fontWeight="700" color="brand.textDark" mb={3} fontSize="sm">
+                  Credentials &amp; Memberships
+                </Text>
+                <VStack align="flex-start" spacing={2}>
+                  {CREDENTIALS.map((c) => (
+                    <HStack key={c} spacing={2}>
+                      <Box
+                        w="6px"
+                        h="6px"
+                        borderRadius="full"
+                        bg="brand.seafoam"
+                        flexShrink={0}
+                      />
+                      <Text fontSize="13px" color="brand.textDark" opacity={0.75}>
+                        {c}
+                      </Text>
+                    </HStack>
+                  ))}
+                </VStack>
+              </Box>
+            </FadeUp>
+          </VStack>
+        </SlideRight>
       </Flex>
     </Box>
   );

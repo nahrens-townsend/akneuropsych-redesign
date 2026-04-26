@@ -9,6 +9,7 @@ import {
   Badge,
 } from "@chakra-ui/react";
 import { FiArrowRight, FiCalendar } from "react-icons/fi";
+import { HeroFade } from "./FadeIn";
 
 export default function HeroSection() {
   return (
@@ -44,90 +45,100 @@ export default function HeroSection() {
           spacing={7}
           maxW={{ base: "100%", lg: "680px" }}
         >
-          <Badge
-            bg="brand.seafoam"
-            color="white"
-            px={4}
-            py={1.5}
-            borderRadius="full"
-            fontSize="sm"
-            fontWeight="600"
-            letterSpacing="wide"
-          >
-            Neuropsychological Care
-          </Badge>
+          <HeroFade delay={0}>
+            <Badge
+              bg="brand.seafoam"
+              color="white"
+              px={4}
+              py={1.5}
+              borderRadius="full"
+              fontSize="sm"
+              fontWeight="600"
+              letterSpacing="wide"
+            >
+              Neuropsychological Care
+            </Badge>
+          </HeroFade>
 
-          <Heading
-            as="h1"
-            fontSize={{ base: "40px", md: "52px", lg: "62px" }}
-            fontWeight="800"
-            lineHeight="1.1"
-            color="white"
-          >
-            Understand Your{" "}
-            <Text as="span" color="brand.seafoam">
-              Brain.
+          <HeroFade delay={0.12}>
+            <Heading
+              as="h1"
+              fontSize={{ base: "40px", md: "52px", lg: "62px" }}
+              fontWeight="800"
+              lineHeight="1.1"
+              color="white"
+            >
+              Understand Your{" "}
+              <Text as="span" color="brand.seafoam">
+                Brain.
+              </Text>
+              <br />
+              Reclaim Your Life.
+            </Heading>
+          </HeroFade>
+
+          <HeroFade delay={0.22}>
+            <Text
+              fontSize={{ base: "17px", md: "19px" }}
+              color="whiteAlpha.900"
+              lineHeight="1.75"
+              maxW="580px"
+            >
+              Comprehensive neuropsychological assessments and evidence-based
+              treatment with Dr. Kilgour — a biopsychosocial approach designed
+              to help you thrive.
             </Text>
-            <br />
-            Reclaim Your Life.
-          </Heading>
+          </HeroFade>
 
-          <Text
-            fontSize={{ base: "17px", md: "19px" }}
-            color="whiteAlpha.900"
-            lineHeight="1.75"
-            maxW="580px"
-          >
-            Comprehensive neuropsychological assessments and evidence-based
-            treatment with Dr. Kilgour — a biopsychosocial approach designed to
-            help you thrive.
-          </Text>
-
-          <Text
-            fontSize={{ base: "15px", md: "17px" }}
-            color="whiteAlpha.800"
-            lineHeight="1.8"
-            maxW="580px"
-          >
-            Whether you're navigating attention challenges, memory concerns,
-            recovery from brain injury, or seeking clarity on a recent
-            diagnosis, our practice provides a thorough and compassionate
-            evaluation process that places your story at the center of care.
-            Serving patients across Alaska with personalized treatment planning
-            rooted in the latest research.
-          </Text>
-
-          <HStack
-            spacing={4}
-            pt={2}
-            flexWrap="wrap"
-            justify={{ base: "center", lg: "flex-start" }}
-          >
-            <Button
-              as="a"
-              href="#contact"
-              variant="cta"
-              size="lg"
-              rightIcon={<FiCalendar />}
-              px={8}
-              py={6}
-              fontSize="md"
+          <HeroFade delay={0.30}>
+            <Text
+              fontSize={{ base: "15px", md: "17px" }}
+              color="whiteAlpha.800"
+              lineHeight="1.8"
+              maxW="580px"
             >
-              Book a Consultation
-            </Button>
-            <Button
-              as="a"
-              href="#services"
-              variant="ctaWhite"
-              size="lg"
-              rightIcon={<FiArrowRight />}
-              px={8}
-              py={6}
-              fontSize="md"
+              Whether you're navigating attention challenges, memory concerns,
+              recovery from brain injury, or seeking clarity on a recent
+              diagnosis, our practice provides a thorough and compassionate
+              evaluation process that places your story at the center of care.
+              Serving patients across Alaska with personalized treatment
+              planning rooted in the latest research.
+            </Text>
+          </HeroFade>
+
+          <HeroFade delay={0.40}>
+            <HStack
+              spacing={4}
+              pt={2}
+              flexWrap="wrap"
+              justify={{ base: "center", lg: "flex-start" }}
             >
-              Our Services
-            </Button>
-          </HStack>
+              <Button
+                as="a"
+                href="#contact"
+                variant="cta"
+                size="lg"
+                rightIcon={<FiCalendar />}
+                px={8}
+                py={6}
+                fontSize="md"
+              >
+                Book a Consultation
+              </Button>
+              <Button
+                as="a"
+                href="#services"
+                variant="ctaWhite"
+                size="lg"
+                rightIcon={<FiArrowRight />}
+                px={8}
+                py={6}
+                fontSize="md"
+              >
+                Our Services
+              </Button>
+            </HStack>
+          </HeroFade>
         </VStack>
       </Flex>
     </Box>

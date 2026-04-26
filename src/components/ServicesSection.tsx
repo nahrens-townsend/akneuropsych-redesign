@@ -13,6 +13,7 @@ import {
   Button,
 } from '@chakra-ui/react'
 import { FiClipboard, FiShield, FiTrendingUp, FiCheckCircle, FiArrowRight } from 'react-icons/fi'
+import { FadeUp } from './FadeIn'
 
 const SERVICES = [
   {
@@ -68,119 +69,125 @@ export default function ServicesSection() {
       bg="#F8FAFB"
     >
       <Box maxW="1200px" mx="auto" px={{ base: 4, md: 8 }}>
-        <VStack spacing={3} mb={12} textAlign="center">
-          <Text
-            fontSize="sm"
-            fontWeight="700"
-            color="brand.teal"
-            letterSpacing="widest"
-            textTransform="uppercase"
-          >
-            What We Offer
-          </Text>
-          <Heading
-            fontSize={{ base: '28px', md: '36px' }}
-            fontWeight="800"
-            color="brand.textDark"
-          >
-            Comprehensive Neuropsychological Services
-          </Heading>
-          <Text
-            fontSize={{ base: '15px', md: '17px' }}
-            color="brand.textDark"
-            opacity={0.7}
-            maxW="520px"
-          >
-            From initial assessment through to long-term recovery and thriving.
-          </Text>
-        </VStack>
+        <FadeUp>
+          <VStack spacing={3} mb={12} textAlign="center">
+            <Text
+              fontSize="sm"
+              fontWeight="700"
+              color="brand.teal"
+              letterSpacing="widest"
+              textTransform="uppercase"
+            >
+              What We Offer
+            </Text>
+            <Heading
+              fontSize={{ base: '28px', md: '36px' }}
+              fontWeight="800"
+              color="brand.textDark"
+            >
+              Comprehensive Neuropsychological Services
+            </Heading>
+            <Text
+              fontSize={{ base: '15px', md: '17px' }}
+              color="brand.textDark"
+              opacity={0.7}
+              maxW="520px"
+            >
+              From initial assessment through to long-term recovery and thriving.
+            </Text>
+          </VStack>
+        </FadeUp>
 
         <Grid
           templateColumns={{ base: '1fr', md: 'repeat(3, 1fr)' }}
           gap={8}
         >
-          {SERVICES.map((s) => (
+          {SERVICES.map((s, idx) => (
             <GridItem key={s.title}>
-              <Box
-                bg="white"
-                borderRadius="20px"
-                p={8}
-                h="full"
-                border="1.5px solid"
-                borderColor="gray.100"
-                display="flex"
-                flexDirection="column"
-                transition="all 0.25s"
-                _hover={{
-                  borderColor: 'brand.seafoam',
-                  boxShadow: '0 10px 40px rgba(96,166,166,0.12)',
-                  transform: 'translateY(-4px)',
-                }}
-              >
-                <VStack align="flex-start" spacing={5} flex={1}>
-                  <Box
-                    w="56px"
-                    h="56px"
-                    borderRadius="16px"
-                    bg={s.bg}
-                    display="flex"
-                    alignItems="center"
-                    justifyContent="center"
-                  >
-                    <Icon as={s.icon} color={s.accent} boxSize={6} />
+              <FadeUp delay={idx * 0.12} style={{ height: '100%' }}>
+                <Box
+                  bg="white"
+                  borderRadius="20px"
+                  p={8}
+                  h="full"
+                  border="1.5px solid"
+                  borderColor="gray.100"
+                  display="flex"
+                  flexDirection="column"
+                  transition="all 0.25s"
+                  _hover={{
+                    borderColor: 'brand.seafoam',
+                    boxShadow: '0 10px 40px rgba(96,166,166,0.12)',
+                    transform: 'translateY(-4px)',
+                  }}
+                >
+                  <VStack align="flex-start" spacing={5} flex={1}>
+                    <Box
+                      w="56px"
+                      h="56px"
+                      borderRadius="16px"
+                      bg={s.bg}
+                      display="flex"
+                      alignItems="center"
+                      justifyContent="center"
+                    >
+                      <Icon as={s.icon} color={s.accent} boxSize={6} />
+                    </Box>
+
+                    <Heading fontSize="20px" fontWeight="700" color="brand.textDark">
+                      {s.title}
+                    </Heading>
+
+                    <Text fontSize="14px" color="brand.textDark" opacity={0.75} lineHeight="1.7">
+                      {s.description}
+                    </Text>
+
+                    <List spacing={2} flex={1}>
+                      {s.items.map((item) => (
+                        <ListItem key={item} display="flex" alignItems="center">
+                          <ListIcon as={FiCheckCircle} color={s.accent} boxSize={4} mr={2} />
+                          <Text fontSize="13px" color="brand.textDark" opacity={0.8}>
+                            {item}
+                          </Text>
+                        </ListItem>
+                      ))}
+                    </List>
+                  </VStack>
+
+                  <Box mt={6}>
+                    <Button
+                      as="a"
+                      href="#contact"
+                      variant="ctaOutline"
+                      size="sm"
+                      rightIcon={<FiArrowRight />}
+                      w="full"
+                    >
+                      Learn More
+                    </Button>
                   </Box>
-
-                  <Heading fontSize="20px" fontWeight="700" color="brand.textDark">
-                    {s.title}
-                  </Heading>
-
-                  <Text fontSize="14px" color="brand.textDark" opacity={0.75} lineHeight="1.7">
-                    {s.description}
-                  </Text>
-
-                  <List spacing={2} flex={1}>
-                    {s.items.map((item) => (
-                      <ListItem key={item} display="flex" alignItems="center">
-                        <ListIcon as={FiCheckCircle} color={s.accent} boxSize={4} mr={2} />
-                        <Text fontSize="13px" color="brand.textDark" opacity={0.8}>
-                          {item}
-                        </Text>
-                      </ListItem>
-                    ))}
-                  </List>
-                </VStack>
-
-                <Box mt={6}>
-                  <Button
-                    as="a"
-                    href="#contact"
-                    variant="ctaOutline"
-                    size="sm"
-                    rightIcon={<FiArrowRight />}
-                    w="full"
-                  >
-                    Learn More
-                  </Button>
                 </Box>
-              </Box>
+              </FadeUp>
             </GridItem>
           ))}
         </Grid>
 
-        <HStack justify="center" mt={10}>
-          <Text fontSize="14px" color="brand.textDark" opacity={0.7}>
-            Not sure what you need?
-          </Text>
-          <Button
-            as="a"
-            href="#contact"
-            variant="cta"
-            size="md"
-            rightIcon={<FiArrowRight />}
-          >
-            Book a Free Intake Call
-          </Button>
-        </HStack>
+        <FadeUp delay={0.1}>
+          <HStack justify="center" mt={10}>
+            <Text fontSize="14px" color="brand.textDark" opacity={0.7}>
+              Not sure what you need?
+            </Text>
+            <Button
+              as="a"
+              href="#contact"
+              variant="cta"
+              size="md"
+              rightIcon={<FiArrowRight />}
+            >
+              Book a Free Intake Call
+            </Button>
+          </HStack>
+        </FadeUp>
       </Box>
     </Box>
   )

@@ -1,4 +1,5 @@
 import { Box, Flex, VStack, HStack, Text, Heading } from '@chakra-ui/react'
+import { FadeUp } from './FadeIn'
 
 const STEPS = [
   {
@@ -27,32 +28,34 @@ export default function ProcessSection() {
       bg="white"
     >
       <Box maxW="1200px" mx="auto" px={{ base: 4, md: 8 }}>
-        <VStack spacing={3} mb={14} textAlign="center">
-          <Text
-            fontSize="sm"
-            fontWeight="700"
-            color="brand.teal"
-            letterSpacing="widest"
-            textTransform="uppercase"
-          >
-            How It Works
-          </Text>
-          <Heading
-            fontSize={{ base: '28px', md: '36px' }}
-            fontWeight="800"
-            color="brand.textDark"
-          >
-            Your Journey to Better Brain Health
-          </Heading>
-          <Text
-            fontSize={{ base: '15px', md: '17px' }}
-            color="brand.textDark"
-            opacity={0.7}
-            maxW="480px"
-          >
-            Simple, clear, compassionate — from first contact to lasting outcomes.
-          </Text>
-        </VStack>
+        <FadeUp>
+          <VStack spacing={3} mb={14} textAlign="center">
+            <Text
+              fontSize="sm"
+              fontWeight="700"
+              color="brand.teal"
+              letterSpacing="widest"
+              textTransform="uppercase"
+            >
+              How It Works
+            </Text>
+            <Heading
+              fontSize={{ base: '28px', md: '36px' }}
+              fontWeight="800"
+              color="brand.textDark"
+            >
+              Your Journey to Better Brain Health
+            </Heading>
+            <Text
+              fontSize={{ base: '15px', md: '17px' }}
+              color="brand.textDark"
+              opacity={0.7}
+              maxW="480px"
+            >
+              Simple, clear, compassionate — from first contact to lasting outcomes.
+            </Text>
+          </VStack>
+        </FadeUp>
 
         <Flex
           direction={{ base: 'column', md: 'row' }}
@@ -79,50 +82,52 @@ export default function ProcessSection() {
               position="relative"
               zIndex={1}
             >
-              <VStack align={{ base: 'flex-start', md: 'center' }} spacing={4}>
-                <HStack spacing={3} align="center">
-                  <Box
-                    w="56px"
-                    h="56px"
-                    borderRadius="full"
-                    bg={idx === 1 ? 'brand.teal' : 'brand.misty'}
-                    border="3px solid"
-                    borderColor={idx === 1 ? 'brand.teal' : 'brand.seafoam'}
-                    display="flex"
-                    alignItems="center"
-                    justifyContent="center"
-                    flexShrink={0}
-                    boxShadow={idx === 1 ? '0 4px 20px rgba(96,166,166,0.35)' : 'none'}
-                  >
-                    <Text
-                      fontSize="16px"
-                      fontWeight="800"
-                      color={idx === 1 ? 'white' : 'brand.teal'}
+              <FadeUp delay={idx * 0.15}>
+                <VStack align={{ base: 'flex-start', md: 'center' }} spacing={4}>
+                  <HStack spacing={3} align="center">
+                    <Box
+                      w="56px"
+                      h="56px"
+                      borderRadius="full"
+                      bg={idx === 1 ? 'brand.teal' : 'brand.misty'}
+                      border="3px solid"
+                      borderColor={idx === 1 ? 'brand.teal' : 'brand.seafoam'}
+                      display="flex"
+                      alignItems="center"
+                      justifyContent="center"
+                      flexShrink={0}
+                      boxShadow={idx === 1 ? '0 4px 20px rgba(96,166,166,0.35)' : 'none'}
                     >
-                      {step.number}
-                    </Text>
-                  </Box>
-                </HStack>
+                      <Text
+                        fontSize="16px"
+                        fontWeight="800"
+                        color={idx === 1 ? 'white' : 'brand.teal'}
+                      >
+                        {step.number}
+                      </Text>
+                    </Box>
+                  </HStack>
 
-                <VStack
-                  align={{ base: 'flex-start', md: 'center' }}
-                  textAlign={{ base: 'left', md: 'center' }}
-                  spacing={2}
-                >
-                  <Heading fontSize="18px" fontWeight="700" color="brand.textDark">
-                    {step.title}
-                  </Heading>
-                  <Text
-                    fontSize="14px"
-                    color="brand.textDark"
-                    opacity={0.75}
-                    lineHeight="1.7"
-                    maxW="280px"
+                  <VStack
+                    align={{ base: 'flex-start', md: 'center' }}
+                    textAlign={{ base: 'left', md: 'center' }}
+                    spacing={2}
                   >
-                    {step.desc}
-                  </Text>
+                    <Heading fontSize="18px" fontWeight="700" color="brand.textDark">
+                      {step.title}
+                    </Heading>
+                    <Text
+                      fontSize="14px"
+                      color="brand.textDark"
+                      opacity={0.75}
+                      lineHeight="1.7"
+                      maxW="280px"
+                    >
+                      {step.desc}
+                    </Text>
+                  </VStack>
                 </VStack>
-              </VStack>
+              </FadeUp>
             </Box>
           ))}
         </Flex>

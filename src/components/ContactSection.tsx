@@ -18,12 +18,13 @@ import {
   AlertDescription,
   useToast,
 } from "@chakra-ui/react";
+import { FadeUp } from "./FadeIn";
 import { FiPhone, FiMail, FiMapPin, FiClock, FiSend } from "react-icons/fi";
 import { useState, type FormEvent } from "react";
 
-const PHONE = "(555) 010-0100";
-const PHONE_TEL = "tel:+15550100100";
-const EMAIL = "info@akneuropsych.ca";
+const PHONE = "(587) 216-8132";
+const PHONE_TEL = "tel:+15872168132";
+const EMAIL = "dr.akilgour@gmail.com";
 
 const CONTACT_INFO = [
   { icon: FiPhone, label: "Phone", value: PHONE, href: PHONE_TEL },
@@ -31,13 +32,13 @@ const CONTACT_INFO = [
   {
     icon: FiMapPin,
     label: "Location",
-    value: "Vancouver, BC — Virtual Canada-wide",
+    value: "Calgary, AB — Virtual Canada-wide",
     href: undefined,
   },
   {
     icon: FiClock,
     label: "Hours",
-    value: "Mon – Fri 9am–6pm, Sat 10am–3pm",
+    value: "Mon – Fri 9am–5pm, Sat-Sun Closed",
     href: undefined,
   },
 ];
@@ -75,40 +76,41 @@ export default function ContactSection() {
         align="flex-start"
       >
         {/* Left: Contact Info */}
-        <VStack align="flex-start" spacing={8} flex={1}>
-          <Box>
-            <Text
-              fontSize="sm"
-              fontWeight="700"
-              color="brand.teal"
-              letterSpacing="widest"
-              textTransform="uppercase"
-              mb={3}
-            >
-              Get in Touch
-            </Text>
-            <Heading
-              fontSize={{ base: "28px", md: "36px" }}
-              fontWeight="800"
-              color="brand.textDark"
-              lineHeight="1.2"
-            >
-              Start Your Path to Recovery
-            </Heading>
-            <Text
-              fontSize="16px"
-              color="brand.textDark"
-              opacity={0.75}
-              lineHeight="1.75"
-              mt={4}
-            >
-              Whether you have questions about our services or you're ready to
-              book, we'd love to hear from you. Expect a response within one
-              business day.
-            </Text>
-          </Box>
+        <FadeUp style={{ flex: 1 }}>
+          <VStack align="flex-start" spacing={8} w="full">
+            <Box>
+              <Text
+                fontSize="sm"
+                fontWeight="700"
+                color="brand.teal"
+                letterSpacing="widest"
+                textTransform="uppercase"
+                mb={3}
+              >
+                Get in Touch
+              </Text>
+              <Heading
+                fontSize={{ base: "28px", md: "36px" }}
+                fontWeight="800"
+                color="brand.textDark"
+                lineHeight="1.2"
+              >
+                Start Your Path to Recovery
+              </Heading>
+              <Text
+                fontSize="16px"
+                color="brand.textDark"
+                opacity={0.75}
+                lineHeight="1.75"
+                mt={4}
+              >
+                Whether you have questions about our services or you're ready to
+                book, we'd love to hear from you. Expect a response within one
+                business day.
+              </Text>
+            </Box>
 
-          <VStack align="flex-start" spacing={5} w="full">
+            <VStack align="flex-start" spacing={5} w="full">
             {CONTACT_INFO.map((item) => (
               <HStack key={item.label} spacing={4} align="flex-start">
                 <Box
@@ -158,18 +160,19 @@ export default function ContactSection() {
               </HStack>
             ))}
           </VStack>
-        </VStack>
+          </VStack>
+        </FadeUp>
 
         {/* Right: Form */}
-        <Box
-          flex={1}
-          bg="white"
-          border="1.5px solid"
-          borderColor="gray.100"
-          borderRadius="24px"
-          p={{ base: 6, md: 10 }}
-          boxShadow="0 4px 32px rgba(26,44,53,0.07)"
-        >
+        <FadeUp delay={0.14} style={{ flex: 1 }}>
+          <Box
+            bg="white"
+            border="1.5px solid"
+            borderColor="gray.100"
+            borderRadius="24px"
+            p={{ base: 6, md: 10 }}
+            boxShadow="0 4px 32px rgba(26,44,53,0.07)"
+          >
           <Heading
             fontSize="22px"
             fontWeight="700"
@@ -255,7 +258,7 @@ export default function ContactSection() {
                 <Input
                   name="phone"
                   type="tel"
-                  placeholder="(555) 000-0000"
+                  placeholder="(587) 216-8132"
                   borderRadius="10px"
                   borderColor="gray.200"
                   _focus={{
@@ -263,38 +266,6 @@ export default function ContactSection() {
                     boxShadow: "0 0 0 1px #60A6A6",
                   }}
                 />
-              </FormControl>
-
-              <FormControl>
-                <FormLabel
-                  fontSize="sm"
-                  fontWeight="600"
-                  color="brand.textDark"
-                >
-                  I am interested in…
-                </FormLabel>
-                <Select
-                  name="service"
-                  borderRadius="10px"
-                  borderColor="gray.200"
-                  _focus={{
-                    borderColor: "brand.teal",
-                    boxShadow: "0 0 0 1px #60A6A6",
-                  }}
-                >
-                  <option value="">Select a service</option>
-                  <option value="assessment">
-                    Neuropsychological Assessment
-                  </option>
-                  <option value="prevention">
-                    Prevention &amp; Brain Wellness
-                  </option>
-                  <option value="treatment">
-                    Treatment &amp; Rehabilitation
-                  </option>
-                  <option value="virtual">Virtual Care</option>
-                  <option value="other">Other / Not Sure</option>
-                </Select>
               </FormControl>
 
               <FormControl isRequired>
@@ -341,58 +312,63 @@ export default function ContactSection() {
               </Button>
             </VStack>
           </Box>
-        </Box>
+          </Box>
+        </FadeUp>
       </Flex>
 
       {/* Map */}
-      <Box maxW="1200px" mx="auto" px={{ base: 4, md: 8 }} mt={{ base: 14, md: 20 }}>
-        <Box textAlign="center" mb={8}>
-          <Text
-            fontSize="sm"
-            fontWeight="700"
-            color="brand.teal"
-            letterSpacing="widest"
-            textTransform="uppercase"
-            mb={3}
-          >
-            Our Location
-          </Text>
-          <Heading
-            fontSize={{ base: "24px", md: "32px" }}
-            fontWeight="800"
-            color="brand.textDark"
-            lineHeight="1.2"
-          >
-            Visit Us in Calgary
-          </Heading>
-          <Text
-            fontSize="16px"
-            color="brand.textDark"
-            opacity={0.65}
-            mt={3}
-          >
-            4520 16 Ave NW, Calgary, AB T3B 0N9
-          </Text>
-        </Box>
+      <Box
+        maxW="1200px"
+        mx="auto"
+        px={{ base: 4, md: 8 }}
+        mt={{ base: 14, md: 20 }}
+      >
+        <FadeUp>
+          <Box textAlign="center" mb={8}>
+            <Text
+              fontSize="sm"
+              fontWeight="700"
+              color="brand.teal"
+              letterSpacing="widest"
+              textTransform="uppercase"
+              mb={3}
+            >
+              Our Location
+            </Text>
+            <Heading
+              fontSize={{ base: "24px", md: "32px" }}
+              fontWeight="800"
+              color="brand.textDark"
+              lineHeight="1.2"
+            >
+              Visit Us in Calgary
+            </Heading>
+            <Text fontSize="16px" color="brand.textDark" opacity={0.65} mt={3}>
+              4520 16 Ave NW, Calgary, AB T3B 0N9
+            </Text>
+          </Box>
+        </FadeUp>
 
-        <Box
-          borderRadius="24px"
-          overflow="hidden"
-          boxShadow="0 4px 32px rgba(26,44,53,0.07)"
-          border="1.5px solid"
-          borderColor="gray.100"
-        >
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2507.0876439898702!2d-114.1626977231417!3d51.06993214256716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53716ef854e22083%3A0x2b6402bbbc847b1c!2s4520%2016%20Ave%20NW%2C%20Calgary%2C%20AB%20T3B%200N9!5e0!3m2!1sen!2sca!4v1754454102077!5m2!1sen!2sca"
-            width="100%"
-            height="450"
-            style={{ border: 0, display: "block" }}
-            loading="lazy"
-            allowFullScreen
-            title="AK Neuropsych office location — 4520 16 Ave NW, Calgary, AB"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
-        </Box>
+        <FadeUp delay={0.1}>
+          <Box
+            borderRadius="24px"
+            overflow="hidden"
+            boxShadow="0 4px 32px rgba(26,44,53,0.07)"
+            border="1.5px solid"
+            borderColor="gray.100"
+          >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2507.0876439898702!2d-114.1626977231417!3d51.06993214256716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53716ef854e22083%3A0x2b6402bbbc847b1c!2s4520%2016%20Ave%20NW%2C%20Calgary%2C%20AB%20T3B%200N9!5e0!3m2!1sen!2sca!4v1754454102077!5m2!1sen!2sca"
+              width="100%"
+              height="450"
+              style={{ border: 0, display: "block" }}
+              loading="lazy"
+              allowFullScreen
+              title="AK Neuropsych office location — 4520 16 Ave NW, Calgary, AB"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </Box>
+        </FadeUp>
       </Box>
     </Box>
   );
