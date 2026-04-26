@@ -75,7 +75,7 @@ export default function MeetDrKilgour() {
               alt="Dr. Andrea Kilgour — Registered Neuropsychologist, Alberta"
               borderRadius="20px"
               w="full"
-              h={{ base: "400px", lg: "540px" }}
+              h="540px"
               objectFit="cover"
               objectPosition="center top"
               position="relative"

@@ -1,50 +1,82 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { lazy, Suspense } from 'react'
-import { Box } from '@chakra-ui/react'
-import Header from './components/Header'
-import Footer from './components/Footer'
-import ScrollToTop from './components/ScrollToTop'
-import HomePage from './pages/HomePage'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { lazy, Suspense } from "react";
+import { Box } from "@chakra-ui/react";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import ScrollToTop from "./components/ScrollToTop";
+import HomePage from "./pages/HomePage";
 
-const MeetDrKilgour = lazy(() => import('./pages/MeetDrKilgour'))
-const ServicesPage = lazy(() => import('./pages/ServicesPage'))
-const NeuropsychEvalPage = lazy(() => import('./pages/NeuropsychEvalPage'))
+const MeetDrKilgour = lazy(() => import("./pages/MeetDrKilgour"));
+
+const BaselineCognitivePage = lazy(
+  () => import("./pages/BaselineCognitivePage"),
+);
+const NeuropsychEvalPage = lazy(() => import("./pages/NeuropsychEvalPage"));
+const PsychAssessmentPage = lazy(() => import("./pages/PsychAssessmentPage"));
+const FAQPage = lazy(() => import("./pages/FAQPage"));
+const ResourcesPage = lazy(() => import("./pages/ResourcesPage"));
 
 function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <Header />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route
-          path="/services"
-          element={
-            <Suspense fallback={<Box minH="60vh" />}>
-              <ServicesPage />
-            </Suspense>
-          }
-        />
-        <Route
-          path="/meet-dr-kilgour"
-          element={
-            <Suspense fallback={<Box minH="60vh" />}>
-              <MeetDrKilgour />
-            </Suspense>
-          }
-        />
-        <Route
-          path="/neuropsychological-evaluation"
-          element={
-            <Suspense fallback={<Box minH="60vh" />}>
-              <NeuropsychEvalPage />
-            </Suspense>
-          }
-        />
-      </Routes>
-      <Footer />
+      <Navbar />
+      <Box pt="72px">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route
+            path="/services"
+            element={
+              <Suspense fallback={<Box minH="60vh" />}>
+                <BaselineCognitivePage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/meet-dr-kilgour"
+            element={
+              <Suspense fallback={<Box minH="60vh" />}>
+                <MeetDrKilgour />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/neuropsychological-evaluation"
+            element={
+              <Suspense fallback={<Box minH="60vh" />}>
+                <NeuropsychEvalPage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/psychological-assessments"
+            element={
+              <Suspense fallback={<Box minH="60vh" />}>
+                <PsychAssessmentPage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/faq"
+            element={
+              <Suspense fallback={<Box minH="60vh" />}>
+                <FAQPage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/resources"
+            element={
+              <Suspense fallback={<Box minH="60vh" />}>
+                <ResourcesPage />
+              </Suspense>
+            }
+          />
+        </Routes>
+        <Footer />
+      </Box>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;

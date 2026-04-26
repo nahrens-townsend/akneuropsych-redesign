@@ -9,55 +9,55 @@ import {
   Image,
 } from "@chakra-ui/react";
 import {
-  FiBarChart2,
+  FiSearch,
   FiClipboard,
-  FiCpu,
-  FiFileText,
+  FiMessageSquare,
   FiPhone,
-  FiUserCheck,
+  FiBarChart2,
   FiUsers,
+  FiFileText,
 } from "react-icons/fi";
 import PageHero from "../components/PageHero";
-import screeningImage from "../assets/images/raspopova-marina-yL96L498NDM-unsplash.jpg";
 import CTABanner from "../components/CTABanner";
+import WhatToExpectSection from "../components/WhatToExpectSection";
+import type { WhatToExpectStep } from "../components/WhatToExpectSection";
+import screeningImage from "../assets/images/raspopova-marina-yL96L498NDM-unsplash.jpg";
+import cornerstonesImage from "../assets/images/services-1.jpg";
 import HeroImage from "../assets/images/shapelined-_JBKdviweXI-unsplash.jpg";
-import WhatToExpectSection, {
-  WhatToExpectStep,
-} from "../components/WhatToExpectSection";
 
 const PILLARS = [
   {
-    icon: FiCpu,
-    label: "Neurologically Focused",
+    icon: FiSearch,
+    label: "In-Depth Exploration",
     blurb:
-      "Specialized evaluation targeting the full spectrum of brain-based functions impacted by acquired brain injury, stroke, or progressive neurological conditions.",
+      "A thorough look at emotional functioning, personality structure, and coping patterns — not just symptoms, but the deeper factors shaping daily life.",
   },
   {
-    icon: FiFileText,
-    label: "Diagnostically Precise",
+    icon: FiClipboard,
+    label: "Validated Testing",
     blurb:
-      "In-depth cognitive profiling that differentiates between overlapping conditions, clarifies diagnosis, and identifies the true scope of functional impairment.",
+      "Standardized psychological instruments with established reliability and validity, interpreted within the full context of your personal history.",
   },
   {
-    icon: FiUserCheck,
-    label: "Recovery-Oriented",
+    icon: FiMessageSquare,
+    label: "Collaborative Review",
     blurb:
-      "Every finding is translated into actionable recommendations that support your rehabilitation team and align with your personal recovery goals.",
+      "Findings are shared with you in a dedicated follow-up session, ensuring every recommendation is clear, meaningful, and actionable.",
   },
 ];
 
-const EVALUATION_ITEMS = [
+const ASSESSMENT_ITEMS = [
   {
-    label: "Diagnosis Clarification",
-    text: "Neurological and psychiatric conditions often present with overlapping symptoms. A comprehensive neuropsychological evaluation provides the objective cognitive and behavioural data needed to distinguish between conditions such as traumatic brain injury, dementia, post-concussion syndrome, and mood disorders — bringing clarity where uncertainty has persisted.",
+    label: "Emotional Functioning",
+    text: "The assessment examines how you experience, regulate, and express emotions — identifying patterns of anxiety, depression, trauma responses, or emotional reactivity that may be affecting your quality of life and relationships. Understanding these patterns is the essential first step toward meaningful, lasting change.",
   },
   {
-    label: "Treatment Planning",
-    text: "Evaluation findings are translated into targeted, evidence-based recommendations tailored to your specific cognitive profile. Whether you need accommodations at work or school, medication guidance, or cognitive rehabilitation strategies, the report gives your care team a precise roadmap for intervention.",
+    label: "Personality & Coping Styles",
+    text: "Formal psychological testing provides a validated, structured portrait of your personality and the ways you characteristically respond to stress, adversity, and interpersonal challenges. This understanding informs targeted treatment, builds self-awareness, and highlights both vulnerabilities and areas of resilience.",
   },
   {
-    label: "Rehabilitation Support",
-    text: "A detailed neuropsychological profile equips your entire rehabilitation team — physiotherapists, occupational therapists, speech-language pathologists, and physicians — with the clinical data they need to direct meaningful, coordinated recovery efforts and monitor progress over time.",
+    label: "Clinical Interview & Written Report",
+    text: "A thorough clinical interview anchors the entire assessment, gathering personal history, context, and the concerns most relevant to you. All findings are compiled into a detailed written report, reviewed with you in a dedicated follow-up session so that every result translates into practical, actionable guidance.",
   },
 ];
 
@@ -66,43 +66,40 @@ const WHAT_TO_EXPECT_STEPS: WhatToExpectStep[] = [
     icon: FiPhone,
     title: "Initial Consultation",
     description:
-      "A preliminary discussion to review your medical history, current concerns, and referral context, ensuring the evaluation is appropriate and tailored to your neurological condition and recovery goals.",
+      "A brief discussion to understand your concerns, determine if an assessment is appropriate, and answer any initial questions.",
   },
   {
     icon: FiClipboard,
-    title: "Comprehensive Assessment (8–10 Hours)",
+    title: "Assessment Session(s)",
     description:
-      "A structured series of standardized, evidence-based tests administered one-on-one, assessing memory, attention, processing speed, executive functioning, language, and visuospatial abilities.",
+      "A structured combination of clinical interview and standardized testing, completed in a supportive, one-on-one setting.",
   },
   {
     icon: FiBarChart2,
-    title: "Clinical Analysis & Interpretation",
+    title: "Scoring & Interpretation",
     description:
-      "All results are carefully scored and interpreted in the context of your history, symptoms, and daily functioning, forming a cohesive and accurate cognitive profile.",
+      "All results are carefully analyzed and integrated with your personal history to ensure an accurate and meaningful understanding.",
   },
   {
     icon: FiUsers,
-    title: "Feedback & Results Review",
+    title: "Feedback Session",
     description:
-      "A dedicated session where findings are explained clearly, helping you understand your cognitive strengths, areas of impairment, and what they mean for your recovery.",
+      "A dedicated review where findings are explained clearly, questions are answered, and next steps are outlined.",
   },
   {
     icon: FiFileText,
-    title: "Comprehensive Report & Recommendations",
+    title: "Written Report",
     description:
-      "A detailed written report outlining diagnostic conclusions and evidence-based recommendations to guide treatment, support rehabilitation, and advocate for your needs.",
+      "A comprehensive, easy-to-understand document you can use for personal insight or to guide treatment with other professionals.",
   },
 ];
 
-const CORNERSTONES_IMAGE =
-  "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=1200&q=80";
-
-export default function NeuropsychEvalPage() {
+export default function PsychAssessmentPage() {
   return (
     <main>
       <PageHero
-        title="Neuropsychological Evaluation"
-        subtitle="Brain Injury & Neurological Assessment — Alberta, Canada"
+        title="Psychological Assessment"
+        subtitle="Emotional & Personality Evaluation — Alberta, Canada"
         bgImage={HeroImage}
       />
 
@@ -122,12 +119,13 @@ export default function NeuropsychEvalPage() {
             color="brand.textDark"
             letterSpacing="-0.01em"
           >
-            Clinically Rigorous.{" "}
+            Clinically Grounded.{" "}
             <Text as="span" color="brand.teal">
-              Recovery-Focused.
+              Emotionally Informed.
             </Text>
           </Text>
 
+          {/* Styled divider */}
           <Box mt={5} mb={8}>
             <Box
               as="hr"
@@ -140,6 +138,7 @@ export default function NeuropsychEvalPage() {
             />
           </Box>
 
+          {/* 3 icon pillars */}
           <Flex
             direction={{ base: "column", md: "row" }}
             gap={{ base: 10, md: 8 }}
@@ -188,7 +187,7 @@ export default function NeuropsychEvalPage() {
         </VStack>
       </Box>
 
-      {/* ── Neuropsychological Evaluation Feature ───────────────────── */}
+      {/* ── Psychological Assessment Feature ────────────────────────── */}
       <Box
         as="section"
         position="relative"
@@ -204,7 +203,7 @@ export default function NeuropsychEvalPage() {
           bgPosition="50% 61%"
         />
 
-        {/* Mobile: uniform dark overlay */}
+        {/* Mobile: uniform dark overlay for text readability */}
         <Box
           position="absolute"
           inset={0}
@@ -254,7 +253,7 @@ export default function NeuropsychEvalPage() {
               textTransform="uppercase"
               mb={4}
             >
-              Comprehensive Evaluation
+              Comprehensive Assessment
             </Text>
 
             <Heading
@@ -264,9 +263,10 @@ export default function NeuropsychEvalPage() {
               color="white"
               lineHeight="1.2"
             >
-              Neuropsychological Evaluation
+              Psychological Assessment
             </Heading>
 
+            {/* Styled hr */}
             <Box
               as="hr"
               border="none"
@@ -283,18 +283,15 @@ export default function NeuropsychEvalPage() {
               opacity={{ base: 1, lg: 0.85 }}
               lineHeight="1.8"
             >
-              An 8–10 hour assessment designed for individuals living with the
-              effects of brain injury or neurological conditions. Through an
-              extensive battery of standardized, evidence-based tests, it
-              evaluates memory, attention, processing speed, executive
-              functioning, language, visuospatial abilities, and
-              emotional-behavioural regulation. The evaluation generates a
-              detailed cognitive profile that clarifies diagnosis, identifies
-              functional strengths and impairments, and provides the foundation
-              for coordinated care. Results are delivered in a comprehensive
-              written report with clear, actionable recommendations to guide
-              treatment planning, support rehabilitation efforts, and empower
-              you and your care team at every stage of recovery.
+              A comprehensive evaluation for individuals experiencing emotional
+              difficulties, stress, or adverse reactions to life events. Through
+              a clinical interview and a battery of formal psychological tests,
+              it examines emotional functioning, personality structure, coping
+              styles, and the psychological factors influencing daily life.
+              Results are compiled into a detailed written report — reviewed
+              with you in a dedicated follow-up session — to ensure you have a
+              clear understanding of the findings and practical direction for
+              the path ahead.
             </Text>
           </Box>
 
@@ -321,9 +318,8 @@ export default function NeuropsychEvalPage() {
                 lineHeight="1.8"
                 style={{ textShadow: "0 2px 8px rgba(10,30,40,0.5)" }}
               >
-                A neuropsychological evaluation doesn't simply measure what the
-                brain cannot do — it illuminates every strength and strategy
-                available for the road ahead.
+                Understanding how you feel — and why — is not a luxury. It is
+                the foundation of meaningful, lasting change.
               </Text>
               <HStack spacing={3} align="center">
                 <Box w="32px" h="2px" bg="brand.seafoam" flexShrink={0} />
@@ -342,7 +338,7 @@ export default function NeuropsychEvalPage() {
         </Flex>
       </Box>
 
-      {/* ── Why a Neuropsychological Evaluation Matters ─────────────── */}
+      {/* ── Why Psychological Assessments Matter ────────────────────── */}
       <Box as="section" bg="white" py={{ base: "72px", md: "96px" }}>
         <VStack
           maxW="760px"
@@ -360,7 +356,7 @@ export default function NeuropsychEvalPage() {
             letterSpacing="-0.01em"
             textAlign="center"
           >
-            Why a Neuropsychological Evaluation Matters
+            Why Psychological Assessments Matter
           </Heading>
 
           <Box
@@ -381,12 +377,12 @@ export default function NeuropsychEvalPage() {
             lineHeight="1.85"
             mb={5}
           >
-            Brain injuries and neurological conditions affect people in deeply
-            individual ways. Symptoms can shift, overlap, and resist easy
-            explanation. A neuropsychological evaluation cuts through that
-            uncertainty — delivering an objective, comprehensive picture of
-            cognitive functioning across every domain relevant to your condition
-            and your daily life.
+            Emotional difficulties and adverse life reactions rarely fit neatly
+            into a single category — and they're seldom explained by a brief
+            appointment. A psychological assessment provides the depth and
+            structure to understand what is truly happening: the underlying
+            emotional patterns, the personality factors at play, and the coping
+            strategies that are helping or quietly working against you.
           </Text>
 
           <Text
@@ -395,12 +391,12 @@ export default function NeuropsychEvalPage() {
             opacity={0.85}
             lineHeight="1.85"
           >
-            For many people, a formal evaluation is the turning point: the
-            moment a diagnosis finally fits, a treatment plan gains precision,
-            or a rehabilitation programme finds its direction. The resulting
-            report is yours — a detailed, evidence-based document that advocates
-            for your needs in medical, legal, educational, and workplace
-            settings long after the assessment is complete.
+            For many people, a formal assessment is the turning point — the
+            moment vague distress finally has a name and a path forward becomes
+            visible. The written report documents your psychological profile
+            with precision, empowering you and your care team to pursue
+            targeted, evidence-informed treatment that is grounded in who you
+            truly are.
           </Text>
         </VStack>
       </Box>
@@ -411,9 +407,10 @@ export default function NeuropsychEvalPage() {
         steps={WHAT_TO_EXPECT_STEPS}
       />
 
-      {/* ── What the Evaluation Covers ──────────────────────────────── */}
+      {/* ── What the Assessment Explores ────────────────────────────── */}
       <Box as="section" bg="gray.50" py={{ base: "72px", md: "96px" }}>
         <Box maxW="1200px" mx="auto" px={{ base: 6, md: 8 }}>
+          {/* Section header */}
           <VStack align="center" spacing={0} mb={{ base: 10, md: 14 }}>
             <Heading
               as="h2"
@@ -423,7 +420,7 @@ export default function NeuropsychEvalPage() {
               lineHeight="1.2"
               letterSpacing="-0.01em"
             >
-              What the Evaluation Covers
+              What the Assessment Explores
             </Heading>
             <Box
               as="hr"
@@ -436,6 +433,7 @@ export default function NeuropsychEvalPage() {
             />
           </VStack>
 
+          {/* Image + text */}
           <Flex
             direction={{ base: "column", lg: "row" }}
             gap={{ base: 10, lg: 16 }}
@@ -450,17 +448,17 @@ export default function NeuropsychEvalPage() {
               minH={{ lg: "420px" }}
             >
               <Image
-                src={CORNERSTONES_IMAGE}
-                alt="MRI brain scan used in neuropsychological assessment"
+                src={cornerstonesImage}
+                alt="Psychologist conducting a psychological assessment with a patient"
                 w="full"
                 h="full"
                 objectFit="cover"
-                objectPosition="center"
+                objectPosition="top center"
                 display="block"
               />
             </Box>
 
-            {/* Right: evaluation areas */}
+            {/* Right: assessment areas */}
             <VStack
               flex={1}
               spacing={0}
@@ -468,7 +466,7 @@ export default function NeuropsychEvalPage() {
               justify="center"
               gap={5}
             >
-              {EVALUATION_ITEMS.map((item) => (
+              {ASSESSMENT_ITEMS.map((item) => (
                 <Box key={item.label}>
                   <Text
                     fontWeight="600"

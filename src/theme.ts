@@ -18,7 +18,7 @@ const colors = {
 
 const fonts = {
   heading: `'Open Sans', system-ui, -apple-system, sans-serif`,
-  body: `'Open Sans', system-ui, -apple-system, sans-serif`,
+  body: `'Inter', system-ui, -apple-system, sans-serif`,
 };
 
 const styles = {

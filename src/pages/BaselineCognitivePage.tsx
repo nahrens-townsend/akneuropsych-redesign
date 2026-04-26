@@ -8,12 +8,24 @@ import {
   Icon,
   Image,
 } from "@chakra-ui/react";
-import { FiActivity, FiLayers, FiHeart } from "react-icons/fi";
+import {
+  FiActivity,
+  FiLayers,
+  FiHeart,
+  FiPhone,
+  FiClipboard,
+  FiBarChart2,
+  FiUsers,
+  FiFileText,
+} from "react-icons/fi";
 import PageHero from "../components/PageHero";
 import CTABanner from "../components/CTABanner";
 import screeningImage from "../assets/images/raspopova-marina-yL96L498NDM-unsplash.jpg";
 import servicesImages from "../assets/images/services-1.jpg";
 import HeroImage from "../assets/images/pawel-czerwinski-uA5mG5kyazI-unsplash.jpg";
+import WhatToExpectSection, {
+  WhatToExpectStep,
+} from "../components/WhatToExpectSection";
 
 const PILLARS = [
   {
@@ -51,11 +63,44 @@ const PRACTICE_ITEMS = [
   },
 ];
 
+const WHAT_TO_EXPECT_STEPS: WhatToExpectStep[] = [
+  {
+    icon: FiPhone,
+    title: "Initial Consultation",
+    description:
+      "A brief discussion to understand your concerns, history, and goals, ensuring the screening is appropriate and tailored to your needs.",
+  },
+  {
+    icon: FiClipboard,
+    title: "Cognitive Screening Session (3 Hours)",
+    description:
+      "A structured series of standardized, evidence-based tasks assessing memory, attention, processing speed, language, and executive functioning in a supportive, one-on-one setting.",
+  },
+  {
+    icon: FiBarChart2,
+    title: "Scoring & Baseline Analysis",
+    description:
+      "Results are carefully scored and interpreted to establish a clear snapshot of your current cognitive functioning and identify any meaningful patterns or changes.",
+  },
+  {
+    icon: FiUsers,
+    title: "Feedback & Results Review",
+    description:
+      "A dedicated session where findings are explained in clear, practical terms, helping you understand your cognitive profile and what it means moving forward.",
+  },
+  {
+    icon: FiFileText,
+    title: "Report & Next Steps",
+    description:
+      "You’ll receive a detailed written summary with guidance on monitoring, prevention, or further assessment if needed — providing a reliable baseline for future comparison.",
+  },
+];
+
 export default function ServicesPage() {
   return (
     <main>
       <PageHero
-        title="Our Services"
+        title="Baseline Cognitive Screening"
         subtitle="Neuropsychological Care — Alberta, Canada"
         bgImage={HeroImage}
       />
@@ -358,6 +403,12 @@ export default function ServicesPage() {
           </Text>
         </VStack>
       </Box>
+
+      <WhatToExpectSection
+        eyebrow="Your Journey"
+        title="What To Expect"
+        steps={WHAT_TO_EXPECT_STEPS}
+      />
 
       {/* ── Cornerstones of Our Practice ────────────────────────────── */}
       <Box as="section" bg="gray.50" py={{ base: "72px", md: "96px" }}>
