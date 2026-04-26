@@ -18,12 +18,14 @@ import {
   FiFileText,
 } from "react-icons/fi";
 import PageHero from "../components/PageHero";
+import { FadeUp, FadeIn } from "../components/FadeIn";
 import CTABanner from "../components/CTABanner";
 import WhatToExpectSection from "../components/WhatToExpectSection";
 import type { WhatToExpectStep } from "../components/WhatToExpectSection";
 import screeningImage from "../assets/images/raspopova-marina-yL96L498NDM-unsplash.jpg";
-import cornerstonesImage from "../assets/images/services-1.jpg";
-import HeroImage from "../assets/images/shapelined-_JBKdviweXI-unsplash.jpg";
+import cornerstonesImage from "../assets/images/services-2.jpg";
+import HeroImage from "../assets/images/pawel-czerwinski-VIoy52Jx6Cg-unsplash.jpg";
+import base from "@emotion/styled/base";
 
 const PILLARS = [
   {
@@ -113,6 +115,7 @@ export default function PsychAssessmentPage() {
           align="center"
           textAlign="center"
         >
+          <FadeUp>
           <Text
             fontSize={{ base: "22px", md: "32px" }}
             fontWeight="600"
@@ -124,6 +127,7 @@ export default function PsychAssessmentPage() {
               Emotionally Informed.
             </Text>
           </Text>
+          </FadeUp>
 
           {/* Styled divider */}
           <Box mt={5} mb={8}>
@@ -147,8 +151,9 @@ export default function PsychAssessmentPage() {
             w="full"
             maxW="860px"
           >
-            {PILLARS.map((p) => (
-              <VStack key={p.label} spacing={4} flex={1} align="center">
+            {PILLARS.map((p, idx) => (
+              <FadeUp key={p.label} delay={idx * 0.12} style={{ flex: 1 }}>
+              <VStack spacing={4} align="center" w="full">
                 <Box
                   w={{ base: "64px", md: "86px" }}
                   h={{ base: "64px", md: "86px" }}
@@ -182,6 +187,7 @@ export default function PsychAssessmentPage() {
                   {p.blurb}
                 </Text>
               </VStack>
+              </FadeUp>
             ))}
           </Flex>
         </VStack>
@@ -220,7 +226,7 @@ export default function PsychAssessmentPage() {
           display={{ base: "none", lg: "block" }}
           style={{
             background:
-              "linear-gradient(90deg, #2e7575 47%, rgba(36, 76, 90, 0) 100%)",
+              "linear-gradient(90deg, rgb(25, 61, 80) 47%, rgba(20, 50, 60, 0.68) 100%)",
           }}
         />
 
@@ -245,6 +251,7 @@ export default function PsychAssessmentPage() {
         >
           {/* Left: title / hr / description */}
           <Box maxW={{ base: "100%", lg: "600px" }} flex={{ lg: "0 0 600px" }}>
+            <FadeUp>
             <Text
               fontSize="sm"
               fontWeight="600"
@@ -293,6 +300,7 @@ export default function PsychAssessmentPage() {
               clear understanding of the findings and practical direction for
               the path ahead.
             </Text>
+            </FadeUp>
           </Box>
 
           {/* Right: quote — desktop only */}
@@ -301,6 +309,7 @@ export default function PsychAssessmentPage() {
             justify="flex-end"
             display={{ base: "none", lg: "flex" }}
           >
+            <FadeIn delay={0.16}>
             <VStack spacing={5} align="flex-start" maxW="380px">
               <Text
                 fontSize="72px"
@@ -334,18 +343,51 @@ export default function PsychAssessmentPage() {
                 </Text>
               </HStack>
             </VStack>
+            </FadeIn>
           </Flex>
         </Flex>
       </Box>
 
-      {/* ── Why Psychological Assessments Matter ────────────────────── */}
-      <Box as="section" bg="white" py={{ base: "72px", md: "96px" }}>
+      {/* ── Why Psychological Assessments Matter────────────────────── */}
+      <Box
+        as="section"
+        position="relative"
+        bg="white"
+        py={{ base: "72px", md: "96px" }}
+        overflow="hidden"
+        _before={{
+          content: '""',
+          position: "absolute",
+          top: { base: "-80px", md: "80px" },
+          left: "-80px",
+          width: "200px",
+          height: "200px",
+          bg: "brand.teal",
+          borderRadius: "50%",
+          opacity: 0.08,
+        }}
+        _after={{
+          content: '""',
+          position: "absolute",
+          display: { base: "none", md: "inherit" },
+          bottom: "80px",
+          right: "-80px",
+          width: "200px",
+          height: "200px",
+          bg: "brand.teal",
+          borderRadius: "50%",
+          opacity: 0.08,
+        }}
+      >
+        <FadeUp>
         <VStack
           maxW="760px"
           mx="auto"
           px={{ base: 6, md: 8 }}
           spacing={0}
           align="center"
+          position="relative"
+          zIndex={1}
         >
           <Heading
             as="h2"
@@ -356,9 +398,9 @@ export default function PsychAssessmentPage() {
             letterSpacing="-0.01em"
             textAlign="center"
           >
-            Why Psychological Assessments Matter
-          </Heading>
-
+            {" "}
+            Why Psychological Assessments Matter{" "}
+          </Heading>{" "}
           <Box
             as="hr"
             border="none"
@@ -368,8 +410,7 @@ export default function PsychAssessmentPage() {
             mt={5}
             mb={7}
             opacity={0.8}
-          />
-
+          />{" "}
           <Text
             fontSize={{ base: "15px", md: "17px" }}
             color="brand.textDark"
@@ -377,28 +418,30 @@ export default function PsychAssessmentPage() {
             lineHeight="1.85"
             mb={5}
           >
+            {" "}
             Emotional difficulties and adverse life reactions rarely fit neatly
             into a single category — and they're seldom explained by a brief
             appointment. A psychological assessment provides the depth and
             structure to understand what is truly happening: the underlying
             emotional patterns, the personality factors at play, and the coping
-            strategies that are helping or quietly working against you.
-          </Text>
-
+            strategies that are helping or quietly working against you.{" "}
+          </Text>{" "}
           <Text
             fontSize={{ base: "15px", md: "17px" }}
             color="brand.textDark"
             opacity={0.85}
             lineHeight="1.85"
           >
+            {" "}
             For many people, a formal assessment is the turning point — the
             moment vague distress finally has a name and a path forward becomes
             visible. The written report documents your psychological profile
             with precision, empowering you and your care team to pursue
             targeted, evidence-informed treatment that is grounded in who you
-            truly are.
+            truly are.{" "}
           </Text>
         </VStack>
+        </FadeUp>
       </Box>
 
       <WhatToExpectSection
@@ -411,6 +454,7 @@ export default function PsychAssessmentPage() {
       <Box as="section" bg="gray.50" py={{ base: "72px", md: "96px" }}>
         <Box maxW="1200px" mx="auto" px={{ base: 6, md: 8 }}>
           {/* Section header */}
+          <FadeUp>
           <VStack align="center" spacing={0} mb={{ base: 10, md: 14 }}>
             <Heading
               as="h2"
@@ -432,6 +476,7 @@ export default function PsychAssessmentPage() {
               opacity={0.8}
             />
           </VStack>
+          </FadeUp>
 
           {/* Image + text */}
           <Flex
@@ -447,6 +492,7 @@ export default function PsychAssessmentPage() {
               maxH={{ base: "320px", lg: "none" }}
               minH={{ lg: "420px" }}
             >
+              <FadeIn style={{ width: "100%", height: "100%", display: "block" }}>
               <Image
                 src={cornerstonesImage}
                 alt="Psychologist conducting a psychological assessment with a patient"
@@ -456,6 +502,7 @@ export default function PsychAssessmentPage() {
                 objectPosition="top center"
                 display="block"
               />
+              </FadeIn>
             </Box>
 
             {/* Right: assessment areas */}
@@ -466,8 +513,9 @@ export default function PsychAssessmentPage() {
               justify="center"
               gap={5}
             >
-              {ASSESSMENT_ITEMS.map((item) => (
-                <Box key={item.label}>
+              {ASSESSMENT_ITEMS.map((item, idx) => (
+                <FadeUp key={item.label} delay={idx * 0.12}>
+                <Box>
                   <Text
                     fontWeight="600"
                     fontSize={{ base: "16px", md: "24px" }}
@@ -485,6 +533,7 @@ export default function PsychAssessmentPage() {
                     {item.text}
                   </Text>
                 </Box>
+                </FadeUp>
               ))}
             </VStack>
           </Flex>

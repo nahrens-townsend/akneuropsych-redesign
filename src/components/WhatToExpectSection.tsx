@@ -1,4 +1,5 @@
 import { Box, Flex, VStack, Text, Heading, Icon } from "@chakra-ui/react";
+import { FadeUp } from "./FadeIn";
 
 export interface WhatToExpectStep {
   icon: React.ElementType;
@@ -95,6 +96,7 @@ export default function WhatToExpectSection({
     <Box as="section" bg="white" pb={{ base: "72px", md: "96px" }}>
       <Box maxW="1200px" mx="auto" px={{ base: 6, md: 8 }}>
         {/* Header */}
+        <FadeUp>
         <VStack spacing={0} mb={{ base: 12, md: 16 }} align="center">
           <Text
             fontSize="sm"
@@ -127,6 +129,7 @@ export default function WhatToExpectSection({
             opacity={0.8}
           />
         </VStack>
+        </FadeUp>
 
         {/* Mobile: simple vertical stack */}
         <VStack
@@ -135,7 +138,9 @@ export default function WhatToExpectSection({
           align="center"
         >
           {steps.map((step, i) => (
-            <StepCard key={i} step={step} />
+            <FadeUp key={i} delay={i * 0.1}>
+            <StepCard step={step} />
+            </FadeUp>
           ))}
         </VStack>
 
@@ -187,7 +192,9 @@ export default function WhatToExpectSection({
               position="relative"
               zIndex={1}
             >
+              <FadeUp delay={i * 0.1}>
               <StepCard step={step} />
+              </FadeUp>
             </Box>
           ))}
         </Flex>

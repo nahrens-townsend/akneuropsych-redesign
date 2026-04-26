@@ -19,8 +19,9 @@ import {
   FiFileText,
 } from "react-icons/fi";
 import PageHero from "../components/PageHero";
+import { FadeUp, FadeIn } from "../components/FadeIn";
 import CTABanner from "../components/CTABanner";
-import screeningImage from "../assets/images/raspopova-marina-yL96L498NDM-unsplash.jpg";
+import screeningImage from "../assets/images/hanna-morris-Eu_jjK6Z67Q-unsplash.jpg";
 import servicesImages from "../assets/images/services-1.jpg";
 import HeroImage from "../assets/images/pawel-czerwinski-uA5mG5kyazI-unsplash.jpg";
 import WhatToExpectSection, {
@@ -115,6 +116,7 @@ export default function ServicesPage() {
           align="center"
           textAlign="center"
         >
+          <FadeUp>
           <Text
             fontSize={{ base: "22px", md: "32px" }}
             fontWeight="600"
@@ -126,6 +128,7 @@ export default function ServicesPage() {
               Compassion-Driven.
             </Text>
           </Text>
+          </FadeUp>
 
           {/* Styled divider */}
           <Box mt={5} mb={8}>
@@ -149,8 +152,9 @@ export default function ServicesPage() {
             w="full"
             maxW="860px"
           >
-            {PILLARS.map((p) => (
-              <VStack key={p.label} spacing={4} flex={1} align="center">
+            {PILLARS.map((p, idx) => (
+              <FadeUp key={p.label} delay={idx * 0.12} style={{ flex: 1 }}>
+              <VStack spacing={4} align="center" w="full">
                 <Box
                   w={{ base: "64px", md: "86px" }}
                   h={{ base: "64px", md: "86px" }}
@@ -184,12 +188,13 @@ export default function ServicesPage() {
                   {p.blurb}
                 </Text>
               </VStack>
+              </FadeUp>
             ))}
           </Flex>
         </VStack>
       </Box>
 
-      {/* ── Baseline Cognitive Screening ────────────────────────────── */}
+      {/* ── Baseline Cognitive Screening────────────────────────────── */}
       <Box
         as="section"
         position="relative"
@@ -202,7 +207,7 @@ export default function ServicesPage() {
           inset={0}
           bgImage={screeningImage}
           bgSize="cover"
-          bgPosition="50% 61%"
+          bgPosition={{ base: "center", md: "80% 30%" }}
         />
 
         {/* Mobile: uniform dark overlay for text readability */}
@@ -222,7 +227,7 @@ export default function ServicesPage() {
           display={{ base: "none", lg: "block" }}
           style={{
             background:
-              "linear-gradient(90deg, #2e7575 47%, rgba(36, 76, 90, 0) 100%)",
+              "linear-gradient(90deg, rgb(25, 61, 80) 47%, rgba(20, 50, 60, 0.68) 100%)",
           }}
         />
 
@@ -248,6 +253,7 @@ export default function ServicesPage() {
         >
           {/* Left: title / hr / description */}
           <Box maxW={{ base: "100%", lg: "600px" }} flex={{ lg: "0 0 600px" }}>
+            <FadeUp>
             <Text
               fontSize="sm"
               fontWeight="600"
@@ -298,6 +304,7 @@ export default function ServicesPage() {
               monitor the effects of injury, illness, or treatment and support
               informed decisions about care, recovery, and next steps.
             </Text>
+            </FadeUp>
           </Box>
 
           {/* Right: quote — desktop only */}
@@ -306,6 +313,7 @@ export default function ServicesPage() {
             justify="flex-end"
             display={{ base: "none", lg: "flex" }}
           >
+            <FadeIn delay={0.16}>
             <VStack spacing={5} align="flex-start" maxW="380px">
               <Text
                 fontSize="72px"
@@ -339,18 +347,51 @@ export default function ServicesPage() {
                 </Text>
               </HStack>
             </VStack>
+            </FadeIn>
           </Flex>
         </Flex>
       </Box>
 
-      {/* ── Why Cognitive Assessments Matter ───────────────────────── */}
-      <Box as="section" bg="white" py={{ base: "72px", md: "96px" }}>
+      {/* ── Why Cognitive Assessments Matter───────────────────────── */}
+      <Box
+        as="section"
+        position="relative"
+        bg="white"
+        py={{ base: "72px", md: "96px" }}
+        overflow="hidden"
+        _before={{
+          content: '""',
+          position: "absolute",
+          top: { base: "-80px", md: "80px" },
+          left: "-80px",
+          width: "200px",
+          height: "200px",
+          bg: "brand.teal",
+          borderRadius: "50%",
+          opacity: 0.08,
+        }}
+        _after={{
+          content: '""',
+          position: "absolute",
+          display: { base: "none", md: "inherit" },
+          bottom: "80px",
+          right: "-80px",
+          width: "200px",
+          height: "200px",
+          bg: "brand.teal",
+          borderRadius: "50%",
+          opacity: 0.08,
+        }}
+      >
+        <FadeUp>
         <VStack
           maxW="760px"
           mx="auto"
           px={{ base: 6, md: 8 }}
           spacing={0}
           align="center"
+          position="relative"
+          zIndex={1}
         >
           <Heading
             as="h2"
@@ -402,6 +443,7 @@ export default function ServicesPage() {
             your care team to plan, act, and advocate with confidence.
           </Text>
         </VStack>
+        </FadeUp>
       </Box>
 
       <WhatToExpectSection
@@ -414,6 +456,7 @@ export default function ServicesPage() {
       <Box as="section" bg="gray.50" py={{ base: "72px", md: "96px" }}>
         <Box maxW="1200px" mx="auto" px={{ base: 6, md: 8 }}>
           {/* Section header */}
+          <FadeUp>
           <VStack align="center" spacing={0} mb={{ base: 10, md: 14 }}>
             <Heading
               as="h2"
@@ -435,6 +478,7 @@ export default function ServicesPage() {
               opacity={0.8}
             />
           </VStack>
+          </FadeUp>
 
           {/* Image + text */}
           <Flex
@@ -450,6 +494,7 @@ export default function ServicesPage() {
               maxH={{ base: "320px", lg: "none" }}
               minH={{ lg: "420px" }}
             >
+              <FadeIn style={{ width: "100%", height: "100%", display: "block" }}>
               <Image
                 src={servicesImages}
                 alt="Dr. Andrea Kilgour"
@@ -459,6 +504,7 @@ export default function ServicesPage() {
                 objectPosition="top center"
                 display="block"
               />
+              </FadeIn>
             </Box>
 
             {/* Right: pillars */}
@@ -469,8 +515,9 @@ export default function ServicesPage() {
               justify="center"
               gap={5}
             >
-              {PRACTICE_ITEMS.map((item) => (
-                <Box key={item.label}>
+              {PRACTICE_ITEMS.map((item, idx) => (
+                <FadeUp key={item.label} delay={idx * 0.12}>
+                <Box>
                   <Text
                     fontWeight="600"
                     fontSize={{ base: "16px", md: "24px" }}
@@ -488,6 +535,7 @@ export default function ServicesPage() {
                     {item.text}
                   </Text>
                 </Box>
+                </FadeUp>
               ))}
             </VStack>
           </Flex>

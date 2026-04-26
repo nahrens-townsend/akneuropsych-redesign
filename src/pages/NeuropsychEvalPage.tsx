@@ -18,12 +18,14 @@ import {
   FiUsers,
 } from "react-icons/fi";
 import PageHero from "../components/PageHero";
-import screeningImage from "../assets/images/raspopova-marina-yL96L498NDM-unsplash.jpg";
+import { FadeUp, FadeIn } from "../components/FadeIn";
+import screeningImage from "../assets/images/matheus-ferrero-yfmjALh1S6s-unsplash.jpg";
 import CTABanner from "../components/CTABanner";
 import HeroImage from "../assets/images/shapelined-_JBKdviweXI-unsplash.jpg";
 import WhatToExpectSection, {
   WhatToExpectStep,
 } from "../components/WhatToExpectSection";
+import base from "@emotion/styled/base";
 
 const PILLARS = [
   {
@@ -116,17 +118,19 @@ export default function NeuropsychEvalPage() {
           align="center"
           textAlign="center"
         >
-          <Text
-            fontSize={{ base: "22px", md: "32px" }}
-            fontWeight="600"
-            color="brand.textDark"
-            letterSpacing="-0.01em"
-          >
-            Clinically Rigorous.{" "}
-            <Text as="span" color="brand.teal">
-              Recovery-Focused.
+          <FadeUp>
+            <Text
+              fontSize={{ base: "22px", md: "32px" }}
+              fontWeight="600"
+              color="brand.textDark"
+              letterSpacing="-0.01em"
+            >
+              Clinically Rigorous.{" "}
+              <Text as="span" color="brand.teal">
+                Recovery-Focused.
+              </Text>
             </Text>
-          </Text>
+          </FadeUp>
 
           <Box mt={5} mb={8}>
             <Box
@@ -148,8 +152,9 @@ export default function NeuropsychEvalPage() {
             w="full"
             maxW="860px"
           >
-            {PILLARS.map((p) => (
-              <VStack key={p.label} spacing={4} flex={1} align="center">
+            {PILLARS.map((p, idx) => (
+              <FadeUp key={p.label} delay={idx * 0.12} style={{ flex: 1 }}>
+              <VStack spacing={4} align="center" w="full">
                 <Box
                   w={{ base: "64px", md: "86px" }}
                   h={{ base: "64px", md: "86px" }}
@@ -183,6 +188,7 @@ export default function NeuropsychEvalPage() {
                   {p.blurb}
                 </Text>
               </VStack>
+              </FadeUp>
             ))}
           </Flex>
         </VStack>
@@ -201,7 +207,7 @@ export default function NeuropsychEvalPage() {
           inset={0}
           bgImage={screeningImage}
           bgSize="cover"
-          bgPosition="50% 61%"
+          bgPosition={{ base: "30%", md: "0% 70%" }}
         />
 
         {/* Mobile: uniform dark overlay */}
@@ -221,7 +227,7 @@ export default function NeuropsychEvalPage() {
           display={{ base: "none", lg: "block" }}
           style={{
             background:
-              "linear-gradient(90deg, #2e7575 47%, rgba(36, 76, 90, 0) 100%)",
+              "linear-gradient(90deg, rgb(25, 61, 80) 47%, rgba(20, 50, 60, 0.68) 100%)",
           }}
         />
 
@@ -246,6 +252,7 @@ export default function NeuropsychEvalPage() {
         >
           {/* Left: title / hr / description */}
           <Box maxW={{ base: "100%", lg: "600px" }} flex={{ lg: "0 0 600px" }}>
+            <FadeUp>
             <Text
               fontSize="sm"
               fontWeight="600"
@@ -296,6 +303,7 @@ export default function NeuropsychEvalPage() {
               treatment planning, support rehabilitation efforts, and empower
               you and your care team at every stage of recovery.
             </Text>
+            </FadeUp>
           </Box>
 
           {/* Right: quote — desktop only */}
@@ -304,6 +312,7 @@ export default function NeuropsychEvalPage() {
             justify="flex-end"
             display={{ base: "none", lg: "flex" }}
           >
+            <FadeIn delay={0.16}>
             <VStack spacing={5} align="flex-start" maxW="380px">
               <Text
                 fontSize="72px"
@@ -338,18 +347,51 @@ export default function NeuropsychEvalPage() {
                 </Text>
               </HStack>
             </VStack>
+            </FadeIn>
           </Flex>
         </Flex>
       </Box>
 
       {/* ── Why a Neuropsychological Evaluation Matters ─────────────── */}
-      <Box as="section" bg="white" py={{ base: "72px", md: "96px" }}>
+      <Box
+        as="section"
+        position="relative"
+        bg="white"
+        py={{ base: "72px", md: "96px" }}
+        overflow="hidden"
+        _before={{
+          content: '""',
+          position: "absolute",
+          top: { base: "-80px", md: "80px" },
+          left: "-80px",
+          width: "200px",
+          height: "200px",
+          bg: "brand.teal",
+          borderRadius: "50%",
+          opacity: 0.08,
+        }}
+        _after={{
+          content: '""',
+          position: "absolute",
+          display: { base: "none", md: "inherit" },
+          bottom: "80px",
+          right: "-80px",
+          width: "200px",
+          height: "200px",
+          bg: "brand.teal",
+          borderRadius: "50%",
+          opacity: 0.08,
+        }}
+      >
+        <FadeUp>
         <VStack
           maxW="760px"
           mx="auto"
           px={{ base: 6, md: 8 }}
           spacing={0}
           align="center"
+          position="relative"
+          zIndex={1}
         >
           <Heading
             as="h2"
@@ -403,6 +445,7 @@ export default function NeuropsychEvalPage() {
             settings long after the assessment is complete.
           </Text>
         </VStack>
+        </FadeUp>
       </Box>
 
       <WhatToExpectSection
@@ -414,6 +457,7 @@ export default function NeuropsychEvalPage() {
       {/* ── What the Evaluation Covers ──────────────────────────────── */}
       <Box as="section" bg="gray.50" py={{ base: "72px", md: "96px" }}>
         <Box maxW="1200px" mx="auto" px={{ base: 6, md: 8 }}>
+          <FadeUp>
           <VStack align="center" spacing={0} mb={{ base: 10, md: 14 }}>
             <Heading
               as="h2"
@@ -435,6 +479,7 @@ export default function NeuropsychEvalPage() {
               opacity={0.8}
             />
           </VStack>
+          </FadeUp>
 
           <Flex
             direction={{ base: "column", lg: "row" }}
@@ -449,6 +494,7 @@ export default function NeuropsychEvalPage() {
               maxH={{ base: "320px", lg: "none" }}
               minH={{ lg: "420px" }}
             >
+              <FadeIn style={{ width: "100%", height: "100%", display: "block" }}>
               <Image
                 src={CORNERSTONES_IMAGE}
                 alt="MRI brain scan used in neuropsychological assessment"
@@ -458,6 +504,7 @@ export default function NeuropsychEvalPage() {
                 objectPosition="center"
                 display="block"
               />
+              </FadeIn>
             </Box>
 
             {/* Right: evaluation areas */}
@@ -468,8 +515,9 @@ export default function NeuropsychEvalPage() {
               justify="center"
               gap={5}
             >
-              {EVALUATION_ITEMS.map((item) => (
-                <Box key={item.label}>
+              {EVALUATION_ITEMS.map((item, idx) => (
+                <FadeUp key={item.label} delay={idx * 0.12}>
+                <Box>
                   <Text
                     fontWeight="600"
                     fontSize={{ base: "16px", md: "24px" }}
@@ -487,6 +535,7 @@ export default function NeuropsychEvalPage() {
                     {item.text}
                   </Text>
                 </Box>
+                </FadeUp>
               ))}
             </VStack>
           </Flex>
