@@ -40,10 +40,10 @@ export default function HeroSection() {
         zIndex={1}
       >
         <VStack
-          align={{ base: "center", lg: "flex-start" }}
-          textAlign={{ base: "center", lg: "left" }}
+          align={{ base: "center", lg: "center" }}
+          textAlign={{ base: "center", lg: "center" }}
           spacing={7}
-          maxW={{ base: "100%", lg: "680px" }}
+          maxW={{ base: "100%", lg: "1000px" }}
         >
           <HeroFade delay={0}>
             <Badge
@@ -82,7 +82,7 @@ export default function HeroSection() {
               fontSize={{ base: "17px", md: "19px" }}
               color="whiteAlpha.900"
               lineHeight="1.75"
-              maxW="580px"
+              maxW="1000px"
             >
               Comprehensive neuropsychological assessments and evidence-based
               cognitive testing with Dr. Andrea Kilgour in Calgary, AB — a
@@ -96,7 +96,7 @@ export default function HeroSection() {
               fontSize={{ base: "15px", md: "17px" }}
               color="whiteAlpha.800"
               lineHeight="1.8"
-              maxW="580px"
+              maxW="1000px"
             >
               Whether you're navigating attention challenges, memory concerns,
               recovery from traumatic brain injury or concussion, or seeking
@@ -117,7 +117,7 @@ export default function HeroSection() {
             >
               <Button
                 as="a"
-                href="/contact"
+                href="contact"
                 variant="cta"
                 size="lg"
                 rightIcon={<FiCalendar />}
