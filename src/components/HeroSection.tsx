@@ -35,7 +35,7 @@ export default function HeroSection() {
         px={{ base: 4, md: 8 }}
         py={{ base: "100px", md: "148px" }}
         direction="column"
-        align={{ base: "center", lg: "flex-start" }}
+        align={"center"}
         position="relative"
         zIndex={1}
       >
