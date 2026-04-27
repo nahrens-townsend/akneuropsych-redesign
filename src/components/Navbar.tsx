@@ -24,7 +24,7 @@ import {
 import { FiChevronDown, FiMenu } from "react-icons/fi";
 
 const SERVICES = [
-  { label: "Baseline Cognitive Testing", to: "/services" },
+  { label: "Baseline Cognitive Testing", to: "/baseline-cognitive-testing" },
   {
     label: "Neuropsychological Evaluation",
     to: "/neuropsychological-evaluation",

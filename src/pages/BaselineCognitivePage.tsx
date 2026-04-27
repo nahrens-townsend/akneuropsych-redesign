@@ -104,7 +104,7 @@ export default function ServicesPage() {
       <PageMeta
         title="Baseline Cognitive Screening | Memory & Brain Health Assessment | AK Neuropsych"
         description="Comprehensive baseline cognitive testing in Calgary, AB and Winnipeg, MB. Establish your cognitive benchmark for memory, attention, and executive functioning."
-        canonical="/services"
+        canonical="/baseline-cognitive-testing"
       />
       <PageHero
         title="Baseline Cognitive Screening"
@@ -123,17 +123,17 @@ export default function ServicesPage() {
           textAlign="center"
         >
           <FadeUp>
-          <Text
-            fontSize={{ base: "22px", md: "32px" }}
-            fontWeight="600"
-            color="brand.textDark"
-            letterSpacing="-0.01em"
-          >
-            Science-Guided.{" "}
-            <Text as="span" color="brand.teal">
-              Compassion-Driven.
+            <Text
+              fontSize={{ base: "22px", md: "32px" }}
+              fontWeight="600"
+              color="brand.textDark"
+              letterSpacing="-0.01em"
+            >
+              Science-Guided.{" "}
+              <Text as="span" color="brand.teal">
+                Compassion-Driven.
+              </Text>
             </Text>
-          </Text>
           </FadeUp>
 
           {/* Styled divider */}
@@ -160,40 +160,40 @@ export default function ServicesPage() {
           >
             {PILLARS.map((p, idx) => (
               <FadeUp key={p.label} delay={idx * 0.12} style={{ flex: 1 }}>
-              <VStack spacing={4} align="center" w="full">
-                <Box
-                  w={{ base: "64px", md: "86px" }}
-                  h={{ base: "64px", md: "86px" }}
-                  borderRadius="18px"
-                  bg="brand.misty"
-                  display="flex"
-                  alignItems="center"
-                  justifyContent="center"
-                >
-                  <Icon
-                    as={p.icon}
-                    color="brand.teal"
-                    boxSize={{ base: 7, md: 10 }}
-                  />
-                </Box>
-                <Text
-                  fontWeight="600"
-                  fontSize={{ base: "18px", md: "24px" }}
-                  color="brand.textDark"
-                >
-                  {p.label}
-                </Text>
-                <Text
-                  fontSize={{ base: "16px", md: "18px" }}
-                  color="brand.textDark"
-                  opacity={0.7}
-                  lineHeight="1.7"
-                  maxW="240px"
-                  textAlign="center"
-                >
-                  {p.blurb}
-                </Text>
-              </VStack>
+                <VStack spacing={4} align="center" w="full">
+                  <Box
+                    w={{ base: "64px", md: "86px" }}
+                    h={{ base: "64px", md: "86px" }}
+                    borderRadius="18px"
+                    bg="brand.misty"
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="center"
+                  >
+                    <Icon
+                      as={p.icon}
+                      color="brand.teal"
+                      boxSize={{ base: 7, md: 10 }}
+                    />
+                  </Box>
+                  <Text
+                    fontWeight="600"
+                    fontSize={{ base: "18px", md: "24px" }}
+                    color="brand.textDark"
+                  >
+                    {p.label}
+                  </Text>
+                  <Text
+                    fontSize={{ base: "16px", md: "18px" }}
+                    color="brand.textDark"
+                    opacity={0.7}
+                    lineHeight="1.7"
+                    maxW="240px"
+                    textAlign="center"
+                  >
+                    {p.blurb}
+                  </Text>
+                </VStack>
               </FadeUp>
             ))}
           </Flex>
@@ -260,56 +260,57 @@ export default function ServicesPage() {
           {/* Left: title / hr / description */}
           <Box maxW={{ base: "100%", lg: "600px" }} flex={{ lg: "0 0 600px" }}>
             <FadeUp>
-            <Text
-              fontSize="sm"
-              fontWeight="600"
-              color={{ base: "brand.seafoam", lg: "brand.teal" }}
-              letterSpacing="widest"
-              textTransform="uppercase"
-              mb={4}
-            >
-              Featured Service
-            </Text>
+              <Text
+                fontSize="sm"
+                fontWeight="600"
+                color={{ base: "brand.seafoam", lg: "brand.teal" }}
+                letterSpacing="widest"
+                textTransform="uppercase"
+                mb={4}
+              >
+                Featured Service
+              </Text>
 
-            <Heading
-              as="h2"
-              fontSize={{ base: "26px", md: "32px" }}
-              fontWeight="600"
-              color={{ base: "white", lg: "white" }}
-              lineHeight="1.2"
-            >
-              Baseline Cognitive Screening
-            </Heading>
+              <Heading
+                as="h2"
+                fontSize={{ base: "26px", md: "32px" }}
+                fontWeight="600"
+                color={{ base: "white", lg: "white" }}
+                lineHeight="1.2"
+              >
+                Baseline Cognitive Screening
+              </Heading>
 
-            {/* Styled hr */}
-            <Box
-              as="hr"
-              border="none"
-              borderTop="3px solid"
-              borderColor="brand.teal"
-              w="56px"
-              my={5}
-              opacity={0.8}
-            />
+              {/* Styled hr */}
+              <Box
+                as="hr"
+                border="none"
+                borderTop="3px solid"
+                borderColor="brand.teal"
+                w="56px"
+                my={5}
+                opacity={0.8}
+              />
 
-            <Text
-              fontSize={{ base: "15px", md: "16px" }}
-              color={{ base: "whiteAlpha.900" }}
-              opacity={{ base: 1, lg: 0.85 }}
-              lineHeight="1.8"
-            >
-              A 3-hour assessment designed to provide a detailed snapshot of
-              your current cognitive functioning. Through a series of
-              standardized, evidence-based tasks, it evaluates key areas such as
-              memory, attention, processing speed, language, and executive
-              functioning. The results help identify subtle changes that may
-              point to early signs of neurological conditions, while also
-              distinguishing between normal variations and clinically meaningful
-              concerns. Just as importantly, the assessment establishes a
-              reliable baseline, allowing for accurate comparison over time to
-              monitor the effects of injury, illness, or treatment and support
-              informed decisions about care, recovery, and next steps.
-            </Text>
+              <Text
+                fontSize={{ base: "15px", md: "16px" }}
+                color={{ base: "whiteAlpha.900" }}
+                opacity={{ base: 1, lg: 0.85 }}
+                lineHeight="1.8"
+              >
+                A 3-hour assessment designed to provide a detailed snapshot of
+                your current cognitive functioning. Through a series of
+                standardized, evidence-based tasks, it evaluates key areas such
+                as memory, attention, processing speed, language, and executive
+                functioning. The results help identify subtle changes that may
+                point to early signs of neurological conditions, while also
+                distinguishing between normal variations and clinically
+                meaningful concerns. Just as importantly, the assessment
+                establishes a reliable baseline, allowing for accurate
+                comparison over time to monitor the effects of injury, illness,
+                or treatment and support informed decisions about care,
+                recovery, and next steps.
+              </Text>
             </FadeUp>
           </Box>
 
@@ -320,39 +321,39 @@ export default function ServicesPage() {
             display={{ base: "none", lg: "flex" }}
           >
             <FadeIn delay={0.16}>
-            <VStack spacing={5} align="flex-start" maxW="380px">
-              <Text
-                fontSize="72px"
-                lineHeight="0.6"
-                color="brand.seafoam"
-                fontWeight="600"
-                aria-hidden
-              >
-                "
-              </Text>
-              <Text
-                fontSize="18px"
-                fontStyle="italic"
-                color="white"
-                lineHeight="1.8"
-                style={{ textShadow: "0 2px 8px rgba(10,30,40,0.5)" }}
-              >
-                Understanding your cognitive baseline is not about what you
-                might lose — it is about knowing what you have to protect.
-              </Text>
-              <HStack spacing={3} align="center">
-                <Box w="32px" h="2px" bg="brand.seafoam" flexShrink={0} />
+              <VStack spacing={5} align="flex-start" maxW="380px">
                 <Text
-                  fontSize="13px"
+                  fontSize="72px"
+                  lineHeight="0.6"
+                  color="brand.seafoam"
                   fontWeight="600"
-                  color="whiteAlpha.800"
-                  letterSpacing="wide"
-                  style={{ textShadow: "0 1px 4px rgba(10,30,40,0.5)" }}
+                  aria-hidden
                 >
-                  Dr. Andrea Kilgour
+                  "
                 </Text>
-              </HStack>
-            </VStack>
+                <Text
+                  fontSize="18px"
+                  fontStyle="italic"
+                  color="white"
+                  lineHeight="1.8"
+                  style={{ textShadow: "0 2px 8px rgba(10,30,40,0.5)" }}
+                >
+                  Understanding your cognitive baseline is not about what you
+                  might lose — it is about knowing what you have to protect.
+                </Text>
+                <HStack spacing={3} align="center">
+                  <Box w="32px" h="2px" bg="brand.seafoam" flexShrink={0} />
+                  <Text
+                    fontSize="13px"
+                    fontWeight="600"
+                    color="whiteAlpha.800"
+                    letterSpacing="wide"
+                    style={{ textShadow: "0 1px 4px rgba(10,30,40,0.5)" }}
+                  >
+                    Dr. Andrea Kilgour
+                  </Text>
+                </HStack>
+              </VStack>
             </FadeIn>
           </Flex>
         </Flex>
@@ -390,65 +391,65 @@ export default function ServicesPage() {
         }}
       >
         <FadeUp>
-        <VStack
-          maxW="760px"
-          mx="auto"
-          px={{ base: 6, md: 8 }}
-          spacing={0}
-          align="center"
-          position="relative"
-          zIndex={1}
-        >
-          <Heading
-            as="h2"
-            fontSize={{ base: "26px", md: "34px" }}
-            fontWeight="600"
-            color="brand.textDark"
-            lineHeight="1.2"
-            letterSpacing="-0.01em"
+          <VStack
+            maxW="760px"
+            mx="auto"
+            px={{ base: 6, md: 8 }}
+            spacing={0}
+            align="center"
+            position="relative"
+            zIndex={1}
           >
-            Why Cognitive Assessments Matter
-          </Heading>
+            <Heading
+              as="h2"
+              fontSize={{ base: "26px", md: "34px" }}
+              fontWeight="600"
+              color="brand.textDark"
+              lineHeight="1.2"
+              letterSpacing="-0.01em"
+            >
+              Why Cognitive Assessments Matter
+            </Heading>
 
-          <Box
-            as="hr"
-            border="none"
-            borderTop="3px solid"
-            borderColor="brand.teal"
-            w="56px"
-            mt={5}
-            mb={7}
-            opacity={0.8}
-          />
+            <Box
+              as="hr"
+              border="none"
+              borderTop="3px solid"
+              borderColor="brand.teal"
+              w="56px"
+              mt={5}
+              mb={7}
+              opacity={0.8}
+            />
 
-          <Text
-            fontSize={{ base: "15px", md: "17px" }}
-            color="brand.textDark"
-            opacity={0.85}
-            lineHeight="1.85"
-            mb={5}
-          >
-            Cognitive assessments provide an objective, comprehensive picture of
-            how your brain is functioning across key domains — memory,
-            attention, processing speed, language, and executive abilities. They
-            reveal what no single conversation or routine appointment can
-            capture.
-          </Text>
+            <Text
+              fontSize={{ base: "15px", md: "17px" }}
+              color="brand.textDark"
+              opacity={0.85}
+              lineHeight="1.85"
+              mb={5}
+            >
+              Cognitive assessments provide an objective, comprehensive picture
+              of how your brain is functioning across key domains — memory,
+              attention, processing speed, language, and executive abilities.
+              They reveal what no single conversation or routine appointment can
+              capture.
+            </Text>
 
-          <Text
-            fontSize={{ base: "15px", md: "17px" }}
-            color="brand.textDark"
-            opacity={0.85}
-            lineHeight="1.85"
-          >
-            For some, an assessment brings clarity after years of unexplained
-            difficulties. For others, it documents a healthy baseline — an
-            anchor point that becomes invaluable if illness, injury, or aging
-            ever brings change. In every case, the results are yours: a
-            detailed, evidence-based report that empowers you, your family, and
-            your care team to plan, act, and advocate with confidence.
-          </Text>
-        </VStack>
+            <Text
+              fontSize={{ base: "15px", md: "17px" }}
+              color="brand.textDark"
+              opacity={0.85}
+              lineHeight="1.85"
+            >
+              For some, an assessment brings clarity after years of unexplained
+              difficulties. For others, it documents a healthy baseline — an
+              anchor point that becomes invaluable if illness, injury, or aging
+              ever brings change. In every case, the results are yours: a
+              detailed, evidence-based report that empowers you, your family,
+              and your care team to plan, act, and advocate with confidence.
+            </Text>
+          </VStack>
         </FadeUp>
       </Box>
 
@@ -463,27 +464,27 @@ export default function ServicesPage() {
         <Box maxW="1200px" mx="auto" px={{ base: 6, md: 8 }}>
           {/* Section header */}
           <FadeUp>
-          <VStack align="center" spacing={0} mb={{ base: 10, md: 14 }}>
-            <Heading
-              as="h2"
-              fontSize={{ base: "26px", md: "34px" }}
-              fontWeight="600"
-              color="brand.textDark"
-              lineHeight="1.2"
-              letterSpacing="-0.01em"
-            >
-              Cornerstones of Our Practice
-            </Heading>
-            <Box
-              as="hr"
-              border="none"
-              borderTop="3px solid"
-              borderColor="brand.teal"
-              w="56px"
-              mt={5}
-              opacity={0.8}
-            />
-          </VStack>
+            <VStack align="center" spacing={0} mb={{ base: 10, md: 14 }}>
+              <Heading
+                as="h2"
+                fontSize={{ base: "26px", md: "34px" }}
+                fontWeight="600"
+                color="brand.textDark"
+                lineHeight="1.2"
+                letterSpacing="-0.01em"
+              >
+                Cornerstones of Our Practice
+              </Heading>
+              <Box
+                as="hr"
+                border="none"
+                borderTop="3px solid"
+                borderColor="brand.teal"
+                w="56px"
+                mt={5}
+                opacity={0.8}
+              />
+            </VStack>
           </FadeUp>
 
           {/* Image + text */}
@@ -500,16 +501,18 @@ export default function ServicesPage() {
               maxH={{ base: "320px", lg: "none" }}
               minH={{ lg: "420px" }}
             >
-              <FadeIn style={{ width: "100%", height: "100%", display: "block" }}>
-              <Image
-                src={servicesImages}
-                alt="Neuropsychological assessment session at AK Neuropsych, Calgary"
-                w="full"
-                h="full"
-                objectFit="cover"
-                objectPosition="top center"
-                display="block"
-              />
+              <FadeIn
+                style={{ width: "100%", height: "100%", display: "block" }}
+              >
+                <Image
+                  src={servicesImages}
+                  alt="Neuropsychological assessment session at AK Neuropsych, Calgary"
+                  w="full"
+                  h="full"
+                  objectFit="cover"
+                  objectPosition="top center"
+                  display="block"
+                />
               </FadeIn>
             </Box>
 
@@ -523,25 +526,25 @@ export default function ServicesPage() {
             >
               {PRACTICE_ITEMS.map((item, idx) => (
                 <FadeUp key={item.label} delay={idx * 0.12}>
-                <Box>
-                  <Text
-                    as="h3"
-                    fontWeight="600"
-                    fontSize={{ base: "16px", md: "24px" }}
-                    color="brand.teal"
-                    mb={1}
-                  >
-                    {item.label}
-                  </Text>
-                  <Text
-                    fontSize={{ base: "15px", md: "16px" }}
-                    color="brand.textDark"
-                    opacity={0.85}
-                    lineHeight="1.85"
-                  >
-                    {item.text}
-                  </Text>
-                </Box>
+                  <Box>
+                    <Text
+                      as="h3"
+                      fontWeight="600"
+                      fontSize={{ base: "16px", md: "24px" }}
+                      color="brand.teal"
+                      mb={1}
+                    >
+                      {item.label}
+                    </Text>
+                    <Text
+                      fontSize={{ base: "15px", md: "16px" }}
+                      color="brand.textDark"
+                      opacity={0.85}
+                      lineHeight="1.85"
+                    >
+                      {item.text}
+                    </Text>
+                  </Box>
                 </FadeUp>
               ))}
             </VStack>

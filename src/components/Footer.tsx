@@ -14,15 +14,20 @@ import { FiPhone, FiMail } from "react-icons/fi";
 
 const FOOTER_LINKS = {
   Services: [
-    { label: "Neuropsychological Evaluation", to: "/neuropsychological-evaluation" },
+    {
+      label: "Neuropsychological Evaluation",
+      to: "/neuropsychological-evaluation",
+    },
     { label: "Psychological Assessment", to: "/psychological-assessments" },
-    { label: "Baseline Cognitive Screening", to: "/services" },
-    { label: "Virtual Care", to: "/#virtual-care" },
+    {
+      label: "Baseline Cognitive Screening",
+      to: "/baseline-cognitive-testing",
+    },
   ],
   "Quick Links": [
-    { label: "About Dr. Kilgour", to: "/meet-dr-kilgour" },
-    { label: "Conditions We Address", to: "/#conditions" },
+    { label: "Meet Dr. Kilgour", to: "/meet-dr-kilgour" },
     { label: "FAQ", to: "/faq" },
+    { label: "Resources", to: "/resources" },
     { label: "Contact Us", to: "/contact" },
   ],
 };

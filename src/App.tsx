@@ -26,7 +26,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route
-            path="/services"
+            path="/baseline-cognitive-testing"
             element={
               <Suspense fallback={<Box minH="60vh" />}>
                 <BaselineCognitivePage />
