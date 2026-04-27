@@ -8,7 +8,7 @@ import {
   Heading,
   Badge,
 } from "@chakra-ui/react";
-import { FiArrowRight, FiCalendar } from "react-icons/fi";
+import { FiCalendar } from "react-icons/fi";
 import { HeroFade } from "./FadeIn";
 
 export default function HeroSection() {
@@ -64,7 +64,7 @@ export default function HeroSection() {
             <Heading
               as="h1"
               fontSize={{ base: "40px", md: "52px", lg: "62px" }}
-              fontWeight="800"
+              fontWeight="600"
               lineHeight="1.1"
               color="white"
             >
@@ -85,12 +85,13 @@ export default function HeroSection() {
               maxW="580px"
             >
               Comprehensive neuropsychological assessments and evidence-based
-              treatment with Dr. Kilgour — a biopsychosocial approach designed
-              to help you thrive.
+              cognitive testing with Dr. Andrea Kilgour in Calgary, AB — a
+              biopsychosocial approach designed to help you understand and
+              reclaim your brain health.
             </Text>
           </HeroFade>
 
-          <HeroFade delay={0.30}>
+          <HeroFade delay={0.3}>
             <Text
               fontSize={{ base: "15px", md: "17px" }}
               color="whiteAlpha.800"
@@ -98,15 +99,16 @@ export default function HeroSection() {
               maxW="580px"
             >
               Whether you're navigating attention challenges, memory concerns,
-              recovery from brain injury, or seeking clarity on a recent
-              diagnosis, our practice provides a thorough and compassionate
-              evaluation process that places your story at the center of care.
-              Serving patients across Alaska with personalized treatment
-              planning rooted in the latest research.
+              recovery from traumatic brain injury or concussion, or seeking
+              clarity on a recent diagnosis, our practice provides a thorough
+              and compassionate evaluation process that places your story at the
+              center of care. Serving individuals across Alberta and Manitoba
+              with personalized treatment planning rooted in the latest
+              neuropsychological research.
             </Text>
           </HeroFade>
 
-          <HeroFade delay={0.40}>
+          <HeroFade delay={0.4}>
             <HStack
               spacing={4}
               pt={2}
@@ -115,7 +117,7 @@ export default function HeroSection() {
             >
               <Button
                 as="a"
-                href="#contact"
+                href="/contact"
                 variant="cta"
                 size="lg"
                 rightIcon={<FiCalendar />}
@@ -124,18 +126,6 @@ export default function HeroSection() {
                 fontSize="md"
               >
                 Book a Consultation
-              </Button>
-              <Button
-                as="a"
-                href="#services"
-                variant="ctaWhite"
-                size="lg"
-                rightIcon={<FiArrowRight />}
-                px={8}
-                py={6}
-                fontSize="md"
-              >
-                Our Services
               </Button>
             </HStack>
           </HeroFade>

@@ -10,7 +10,6 @@ import {
   FormLabel,
   Input,
   Textarea,
-  Select,
   Icon,
   SimpleGrid,
   Alert,
@@ -90,8 +89,9 @@ export default function ContactSection() {
                 Get in Touch
               </Text>
               <Heading
+                as="h2"
                 fontSize={{ base: "28px", md: "36px" }}
-                fontWeight="800"
+                fontWeight="600"
                 color="brand.textDark"
                 lineHeight="1.2"
               >
@@ -111,55 +111,55 @@ export default function ContactSection() {
             </Box>
 
             <VStack align="flex-start" spacing={5} w="full">
-            {CONTACT_INFO.map((item) => (
-              <HStack key={item.label} spacing={4} align="flex-start">
-                <Box
-                  w="44px"
-                  h="44px"
-                  borderRadius="12px"
-                  bg="brand.misty"
-                  display="flex"
-                  alignItems="center"
-                  justifyContent="center"
-                  flexShrink={0}
-                >
-                  <Icon as={item.icon} color="brand.teal" boxSize={5} />
-                </Box>
-                <VStack align="flex-start" spacing={0}>
-                  <Text
-                    fontSize="12px"
-                    fontWeight="700"
-                    color="brand.slate"
-                    textTransform="uppercase"
-                    letterSpacing="wide"
+              {CONTACT_INFO.map((item) => (
+                <HStack key={item.label} spacing={4} align="flex-start">
+                  <Box
+                    w="44px"
+                    h="44px"
+                    borderRadius="12px"
+                    bg="brand.misty"
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="center"
+                    flexShrink={0}
                   >
-                    {item.label}
-                  </Text>
-                  {item.href ? (
+                    <Icon as={item.icon} color="brand.teal" boxSize={5} />
+                  </Box>
+                  <VStack align="flex-start" spacing={0}>
                     <Text
-                      as="a"
-                      href={item.href}
-                      fontSize="15px"
-                      fontWeight="500"
-                      color="brand.textDark"
-                      _hover={{ color: "brand.teal", textDecoration: "none" }}
-                      transition="color 0.2s"
+                      fontSize="12px"
+                      fontWeight="700"
+                      color="brand.slate"
+                      textTransform="uppercase"
+                      letterSpacing="wide"
                     >
-                      {item.value}
+                      {item.label}
                     </Text>
-                  ) : (
-                    <Text
-                      fontSize="15px"
-                      fontWeight="500"
-                      color="brand.textDark"
-                    >
-                      {item.value}
-                    </Text>
-                  )}
-                </VStack>
-              </HStack>
-            ))}
-          </VStack>
+                    {item.href ? (
+                      <Text
+                        as="a"
+                        href={item.href}
+                        fontSize="15px"
+                        fontWeight="500"
+                        color="brand.textDark"
+                        _hover={{ color: "brand.teal", textDecoration: "none" }}
+                        transition="color 0.2s"
+                      >
+                        {item.value}
+                      </Text>
+                    ) : (
+                      <Text
+                        fontSize="15px"
+                        fontWeight="500"
+                        color="brand.textDark"
+                      >
+                        {item.value}
+                      </Text>
+                    )}
+                  </VStack>
+                </HStack>
+              ))}
+            </VStack>
           </VStack>
         </FadeUp>
 
@@ -173,29 +173,72 @@ export default function ContactSection() {
             p={{ base: 6, md: 10 }}
             boxShadow="0 4px 32px rgba(26,44,53,0.07)"
           >
-          <Heading
-            fontSize="22px"
-            fontWeight="700"
-            color="brand.textDark"
-            mb={6}
-          >
-            Send Us a Message
-          </Heading>
-          <Box as="form" onSubmit={handleSubmit}>
-            <VStack spacing={5}>
-              <SimpleGrid columns={{ base: 1, sm: 2 }} spacing={5} w="full">
+            <Heading
+              as="h3"
+              fontSize="22px"
+              fontWeight="700"
+              color="brand.textDark"
+              mb={6}
+            >
+              Send Us a Message
+            </Heading>
+            <Box as="form" onSubmit={handleSubmit}>
+              <VStack spacing={5}>
+                <SimpleGrid columns={{ base: 1, sm: 2 }} spacing={5} w="full">
+                  <FormControl isRequired>
+                    <FormLabel
+                      fontSize="sm"
+                      fontWeight="600"
+                      color="brand.textDark"
+                    >
+                      First Name
+                    </FormLabel>
+                    <Input
+                      name="firstName"
+                      placeholder="Jane"
+                      size="md"
+                      borderRadius="10px"
+                      borderColor="gray.200"
+                      _focus={{
+                        borderColor: "brand.teal",
+                        boxShadow: "0 0 0 1px #60A6A6",
+                      }}
+                    />
+                  </FormControl>
+                  <FormControl isRequired>
+                    <FormLabel
+                      fontSize="sm"
+                      fontWeight="600"
+                      color="brand.textDark"
+                    >
+                      Last Name
+                    </FormLabel>
+                    <Input
+                      name="lastName"
+                      placeholder="Smith"
+                      size="md"
+                      borderRadius="10px"
+                      borderColor="gray.200"
+                      _focus={{
+                        borderColor: "brand.teal",
+                        boxShadow: "0 0 0 1px #60A6A6",
+                      }}
+                    />
+                  </FormControl>
+                </SimpleGrid>
+
                 <FormControl isRequired>
                   <FormLabel
                     fontSize="sm"
                     fontWeight="600"
                     color="brand.textDark"
                   >
-                    First Name
+                    Email Address
                   </FormLabel>
                   <Input
-                    name="firstName"
-                    placeholder="Jane"
-                    size="md"
+                    name="email"
+                    type="email"
+                    placeholder="jane@example.com"
                     borderRadius="10px"
                     borderColor="gray.200"
                     _focus={{
@@ -204,18 +247,19 @@ export default function ContactSection() {
                     }}
                   />
                 </FormControl>
-                <FormControl isRequired>
+
+                <FormControl>
                   <FormLabel
                     fontSize="sm"
                     fontWeight="600"
                     color="brand.textDark"
                   >
-                    Last Name
+                    Phone (optional)
                   </FormLabel>
                   <Input
-                    name="lastName"
-                    placeholder="Smith"
-                    size="md"
+                    name="phone"
+                    type="tel"
+                    placeholder="(587) 216-8132"
                     borderRadius="10px"
                     borderColor="gray.200"
                     _focus={{
@@ -224,94 +268,51 @@ export default function ContactSection() {
                     }}
                   />
                 </FormControl>
-              </SimpleGrid>
 
-              <FormControl isRequired>
-                <FormLabel
-                  fontSize="sm"
-                  fontWeight="600"
-                  color="brand.textDark"
+                <FormControl isRequired>
+                  <FormLabel
+                    fontSize="sm"
+                    fontWeight="600"
+                    color="brand.textDark"
+                  >
+                    Message
+                  </FormLabel>
+                  <Textarea
+                    name="message"
+                    placeholder="Tell us a bit about what brings you here…"
+                    rows={4}
+                    borderRadius="10px"
+                    borderColor="gray.200"
+                    resize="vertical"
+                    _focus={{
+                      borderColor: "brand.teal",
+                      boxShadow: "0 0 0 1px #60A6A6",
+                    }}
+                  />
+                </FormControl>
+
+                {submitted && (
+                  <Alert status="success" borderRadius="10px">
+                    <AlertIcon />
+                    <AlertDescription fontSize="sm">
+                      Thanks! We'll be in touch within one business day.
+                    </AlertDescription>
+                  </Alert>
+                )}
+
+                <Button
+                  type="submit"
+                  variant="cta"
+                  size="lg"
+                  w="full"
+                  rightIcon={<FiSend />}
+                  fontSize="md"
+                  isDisabled={submitted}
                 >
-                  Email Address
-                </FormLabel>
-                <Input
-                  name="email"
-                  type="email"
-                  placeholder="jane@example.com"
-                  borderRadius="10px"
-                  borderColor="gray.200"
-                  _focus={{
-                    borderColor: "brand.teal",
-                    boxShadow: "0 0 0 1px #60A6A6",
-                  }}
-                />
-              </FormControl>
-
-              <FormControl>
-                <FormLabel
-                  fontSize="sm"
-                  fontWeight="600"
-                  color="brand.textDark"
-                >
-                  Phone (optional)
-                </FormLabel>
-                <Input
-                  name="phone"
-                  type="tel"
-                  placeholder="(587) 216-8132"
-                  borderRadius="10px"
-                  borderColor="gray.200"
-                  _focus={{
-                    borderColor: "brand.teal",
-                    boxShadow: "0 0 0 1px #60A6A6",
-                  }}
-                />
-              </FormControl>
-
-              <FormControl isRequired>
-                <FormLabel
-                  fontSize="sm"
-                  fontWeight="600"
-                  color="brand.textDark"
-                >
-                  Message
-                </FormLabel>
-                <Textarea
-                  name="message"
-                  placeholder="Tell us a bit about what brings you here…"
-                  rows={4}
-                  borderRadius="10px"
-                  borderColor="gray.200"
-                  resize="vertical"
-                  _focus={{
-                    borderColor: "brand.teal",
-                    boxShadow: "0 0 0 1px #60A6A6",
-                  }}
-                />
-              </FormControl>
-
-              {submitted && (
-                <Alert status="success" borderRadius="10px">
-                  <AlertIcon />
-                  <AlertDescription fontSize="sm">
-                    Thanks! We'll be in touch within one business day.
-                  </AlertDescription>
-                </Alert>
-              )}
-
-              <Button
-                type="submit"
-                variant="cta"
-                size="lg"
-                w="full"
-                rightIcon={<FiSend />}
-                fontSize="md"
-                isDisabled={submitted}
-              >
-                {submitted ? "Message Sent" : "Send Message"}
-              </Button>
-            </VStack>
-          </Box>
+                  {submitted ? "Message Sent" : "Send Message"}
+                </Button>
+              </VStack>
+            </Box>
           </Box>
         </FadeUp>
       </Flex>
@@ -337,7 +338,7 @@ export default function ContactSection() {
             </Text>
             <Heading
               fontSize={{ base: "24px", md: "32px" }}
-              fontWeight="800"
+              fontWeight="600"
               color="brand.textDark"
               lineHeight="1.2"
             >

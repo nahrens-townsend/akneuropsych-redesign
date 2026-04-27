@@ -1,30 +1,30 @@
-import { Box, Flex, VStack, HStack, Text, Heading } from '@chakra-ui/react'
-import { FadeUp } from './FadeIn'
+import { Box, Flex, VStack, HStack, Text, Heading } from "@chakra-ui/react";
+import { FadeUp } from "./FadeIn";
 
 const STEPS = [
   {
-    number: '01',
-    title: 'Intake & Referral',
-    desc: 'Complete a brief intake form or call us directly. We review your needs and schedule an initial consultation within days — not months.',
+    number: "01",
+    title: "Intake & Referral",
+    desc: "Complete a brief intake form or call us directly. We review your needs and schedule an initial consultation within days — not months.",
   },
   {
-    number: '02',
-    title: 'Assessment',
-    desc: 'Comprehensive neuropsychological testing and clinical interview across one or more sessions. We use validated, gold-standard instruments.',
+    number: "02",
+    title: "Assessment",
+    desc: "Comprehensive neuropsychological testing and clinical interview across one or more sessions. We use validated, gold-standard instruments.",
   },
   {
-    number: '03',
-    title: 'Report & Treatment',
-    desc: 'Receive a detailed report with clear findings and personalized recommendations. We walk you through results and begin your treatment plan.',
+    number: "03",
+    title: "Report & Treatment",
+    desc: "Receive a detailed report with clear findings and personalized recommendations. We walk you through results and begin your treatment plan.",
   },
-]
+];
 
 export default function ProcessSection() {
   return (
     <Box
       id="process"
       as="section"
-      py={{ base: '60px', md: '100px' }}
+      py={{ base: "60px", md: "100px" }}
       bg="white"
     >
       <Box maxW="1200px" mx="auto" px={{ base: 4, md: 8 }}>
@@ -40,31 +40,33 @@ export default function ProcessSection() {
               How It Works
             </Text>
             <Heading
-              fontSize={{ base: '28px', md: '36px' }}
-              fontWeight="800"
+              as="h2"
+              fontSize={{ base: "28px", md: "36px" }}
+              fontWeight="600"
               color="brand.textDark"
             >
               Your Journey to Better Brain Health
             </Heading>
             <Text
-              fontSize={{ base: '15px', md: '17px' }}
+              fontSize={{ base: "15px", md: "17px" }}
               color="brand.textDark"
               opacity={0.7}
               maxW="480px"
             >
-              Simple, clear, compassionate — from first contact to lasting outcomes.
+              Simple, clear, compassionate — from first contact to lasting
+              outcomes.
             </Text>
           </VStack>
         </FadeUp>
 
         <Flex
-          direction={{ base: 'column', md: 'row' }}
+          direction={{ base: "column", md: "row" }}
           gap={{ base: 8, md: 0 }}
           position="relative"
         >
           {/* Connector line (desktop only) */}
           <Box
-            display={{ base: 'none', md: 'block' }}
+            display={{ base: "none", md: "block" }}
             position="absolute"
             top="36px"
             left="calc(16.67% + 18px)"
@@ -83,25 +85,30 @@ export default function ProcessSection() {
               zIndex={1}
             >
               <FadeUp delay={idx * 0.15}>
-                <VStack align={{ base: 'flex-start', md: 'center' }} spacing={4}>
+                <VStack
+                  align={{ base: "flex-start", md: "center" }}
+                  spacing={4}
+                >
                   <HStack spacing={3} align="center">
                     <Box
                       w="56px"
                       h="56px"
                       borderRadius="full"
-                      bg={idx === 1 ? 'brand.teal' : 'brand.misty'}
+                      bg={idx === 1 ? "brand.teal" : "brand.misty"}
                       border="3px solid"
-                      borderColor={idx === 1 ? 'brand.teal' : 'brand.seafoam'}
+                      borderColor={idx === 1 ? "brand.teal" : "brand.seafoam"}
                       display="flex"
                       alignItems="center"
                       justifyContent="center"
                       flexShrink={0}
-                      boxShadow={idx === 1 ? '0 4px 20px rgba(96,166,166,0.35)' : 'none'}
+                      boxShadow={
+                        idx === 1 ? "0 4px 20px rgba(96,166,166,0.35)" : "none"
+                      }
                     >
                       <Text
                         fontSize="16px"
-                        fontWeight="800"
-                        color={idx === 1 ? 'white' : 'brand.teal'}
+                        fontWeight="600"
+                        color={idx === 1 ? "white" : "brand.teal"}
                       >
                         {step.number}
                       </Text>
@@ -109,11 +116,16 @@ export default function ProcessSection() {
                   </HStack>
 
                   <VStack
-                    align={{ base: 'flex-start', md: 'center' }}
-                    textAlign={{ base: 'left', md: 'center' }}
+                    align={{ base: "flex-start", md: "center" }}
+                    textAlign={{ base: "left", md: "center" }}
                     spacing={2}
                   >
-                    <Heading fontSize="18px" fontWeight="700" color="brand.textDark">
+                    <Heading
+                      as="h3"
+                      fontSize="18px"
+                      fontWeight="700"
+                      color="brand.textDark"
+                    >
                       {step.title}
                     </Heading>
                     <Text
@@ -133,5 +145,5 @@ export default function ProcessSection() {
         </Flex>
       </Box>
     </Box>
-  )
+  );
 }

@@ -27,6 +27,7 @@ import HeroImage from "../assets/images/pawel-czerwinski-uA5mG5kyazI-unsplash.jp
 import WhatToExpectSection, {
   WhatToExpectStep,
 } from "../components/WhatToExpectSection";
+import PageMeta from "../components/PageMeta";
 
 const PILLARS = [
   {
@@ -52,15 +53,15 @@ const PILLARS = [
 const PRACTICE_ITEMS = [
   {
     label: "Assessment",
-    text: "Assessments are tailored to identify behavioural, emotional, and cognitive concerns related to your brain health, as well as provide diagnostic clarification, describe changes over time, and guide treatment recommendations.",
+    text: "Baseline cognitive assessments evaluate memory, attention, processing speed, and executive functioning to establish a personal performance benchmark. These neuropsychological screening results are used for diagnostic clarification, tracking cognitive change over time (including post-concussion or age-related memory decline), and guiding personalized treatment recommendations.",
   },
   {
     label: "Prevention",
-    text: "Individualized treatment is designed to address your unique needs and goals, the challenges or barriers that may be interfering with your best self, and your ability to live in accordance with your values.",
+    text: "Prevention starts with knowing your baseline. Early detection of subtle cognitive changes — through performance validity testing and standardized memory assessments — allows for proactive, evidence-informed strategies to support healthy brain aging before concerns escalate.",
   },
   {
     label: "Treatment",
-    text: "The prevention of illness begins with evidence-informed education and skill-building to help you optimize factors that support healthy aging (e.g. mental health, sleep, exercise, diet, stress management, etc.).",
+    text: "When a baseline cognitive screening identifies areas of concern, targeted treatment recommendations address your unique profile — whether that involves cognitive rehabilitation, lifestyle modifications, or referral for a comprehensive neuropsychological evaluation to further investigate conditions like early dementia, MCI, or post-concussion syndrome.",
   },
 ];
 
@@ -100,6 +101,11 @@ const WHAT_TO_EXPECT_STEPS: WhatToExpectStep[] = [
 export default function ServicesPage() {
   return (
     <main>
+      <PageMeta
+        title="Baseline Cognitive Screening | Memory & Brain Health Assessment | AK Neuropsych"
+        description="Comprehensive baseline cognitive testing in Calgary, AB and Winnipeg, MB. Establish your cognitive benchmark for memory, attention, and executive functioning."
+        canonical="/services"
+      />
       <PageHero
         title="Baseline Cognitive Screening"
         subtitle="Neuropsychological Care — Alberta, Canada"
@@ -497,7 +503,7 @@ export default function ServicesPage() {
               <FadeIn style={{ width: "100%", height: "100%", display: "block" }}>
               <Image
                 src={servicesImages}
-                alt="Dr. Andrea Kilgour"
+                alt="Neuropsychological assessment session at AK Neuropsych, Calgary"
                 w="full"
                 h="full"
                 objectFit="cover"
@@ -519,6 +525,7 @@ export default function ServicesPage() {
                 <FadeUp key={item.label} delay={idx * 0.12}>
                 <Box>
                   <Text
+                    as="h3"
                     fontWeight="600"
                     fontSize={{ base: "16px", md: "24px" }}
                     color="brand.teal"

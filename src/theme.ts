@@ -10,7 +10,7 @@ const colors = {
     slate: "#A4B3BF",
     misty: "#DCEEF2",
     seafoam: "#88BABF",
-    teal: "#2e7575",
+    teal: "#193d50",
     mocha: "#73625C",
     textDark: "#1A2C35",
   },

@@ -8,22 +8,26 @@ import QuoteSection from "../components/QuoteSection";
 import VirtualCareSection from "../components/VirtualCareSection";
 import ProcessSection from "../components/ProcessSection";
 import TrustSection from "../components/TrustSection";
-import ContactSection from "../components/ContactSection";
+import PageMeta from "../components/PageMeta";
 
 export default function HomePage() {
   return (
     <main>
+      <PageMeta
+        title="AK Neuropsych | Neuropsychological Assessments in Calgary & Winnipeg"
+        description="Evidence-based neuropsychological evaluations and cognitive assessments with Dr. Andrea Kilgour — serving Calgary, Alberta and Winnipeg, Manitoba."
+        canonical="/"
+      />
       <HeroSection />
       <ValueSection />
       <AboutSection />
-      <CTABanner />
       <ProblemGrid />
       <ServicesSection />
       <QuoteSection />
       <VirtualCareSection />
       <ProcessSection />
       <TrustSection />
-      <ContactSection />
+      <CTABanner />
     </main>
   );
 }

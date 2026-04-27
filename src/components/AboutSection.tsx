@@ -58,7 +58,7 @@ export default function AboutSection() {
           <FadeIn>
             <Image
               src={headshot}
-              alt="About Dr. Kilgour"
+              alt="Dr. Andrea Kilgour, registered neuropsychologist — Calgary, Alberta"
               borderRadius="20px"
               w="full"
               h={{ base: "360px", lg: "520px" }}
@@ -82,7 +82,7 @@ export default function AboutSection() {
             <VStack spacing={1} align="center">
               <Text
                 fontSize="28px"
-                fontWeight="800"
+                fontWeight="600"
                 color="brand.teal"
                 lineHeight="1"
               >
@@ -117,8 +117,9 @@ export default function AboutSection() {
 
             <FadeUp delay={0.12}>
               <Heading
+                as="h2"
                 fontSize={{ base: "28px", md: "36px" }}
-                fontWeight="800"
+                fontWeight="600"
                 color="brand.textDark"
                 lineHeight="1.2"
               >
@@ -134,9 +135,9 @@ export default function AboutSection() {
                 lineHeight="1.75"
               >
                 Dr. Kilgour is a registered neuropsychologist with over 15 years
-                of experience helping individuals understand, manage, and recover
-                from complex neurological and psychological challenges. Her
-                practice is built on the belief that the brain cannot be
+                of experience helping individuals understand, manage, and
+                recover from complex neurological and psychological challenges.
+                Her practice is built on the belief that the brain cannot be
                 understood in isolation.
               </Text>
             </FadeUp>
@@ -169,7 +170,7 @@ export default function AboutSection() {
               </Box>
             </FadeUp>
 
-            <FadeUp delay={0.30}>
+            <FadeUp delay={0.3}>
               <Box
                 bg="white"
                 border="1.5px solid"
@@ -178,7 +179,12 @@ export default function AboutSection() {
                 p={5}
                 w="full"
               >
-                <Text fontWeight="700" color="brand.textDark" mb={3} fontSize="sm">
+                <Text
+                  fontWeight="700"
+                  color="brand.textDark"
+                  mb={3}
+                  fontSize="sm"
+                >
                   Credentials &amp; Memberships
                 </Text>
                 <VStack align="flex-start" spacing={2}>
@@ -191,7 +197,11 @@ export default function AboutSection() {
                         bg="brand.seafoam"
                         flexShrink={0}
                       />
-                      <Text fontSize="13px" color="brand.textDark" opacity={0.75}>
+                      <Text
+                        fontSize="13px"
+                        color="brand.textDark"
+                        opacity={0.75}
+                      >
                         {c}
                       </Text>
                     </HStack>

@@ -2,8 +2,6 @@ import {
   Box,
   Flex,
   VStack,
-  HStack,
-  Button,
   Text,
   Heading,
   Image,
@@ -11,11 +9,11 @@ import {
   ListItem,
   ListIcon,
 } from "@chakra-ui/react";
-import { Link as RouterLink } from "react-router-dom";
-import { FiCalendar, FiCheckCircle, FiPhone } from "react-icons/fi";
+import { FiCheckCircle } from "react-icons/fi";
 import PageHero from "../components/PageHero";
 import CTABanner from "../components/CTABanner";
 import headshot from "../assets/images/headshot.jpg";
+import PageMeta from "../components/PageMeta";
 
 const BIO_PARAGRAPHS = [
   "Dr. Andrea Kilgour is a registered neuropsychologist who graduated at the top of her class with a Doctorate in Clinical Psychology from Queen's University in 2003. She completed her accredited residency in Neuropsychology at the Ottawa Hospital, gaining hands-on expertise in comprehensive neuropsychological assessment and clinical care.",
@@ -37,6 +35,11 @@ const HIGHLIGHTS = [
 export default function MeetDrKilgour() {
   return (
     <main>
+      <PageMeta
+        title="Meet Dr. Andrea Kilgour | Registered Neuropsychologist | Calgary & Winnipeg"
+        description="Dr. Andrea Kilgour is a registered neuropsychologist with a Doctorate from Queen's University and 20+ years of clinical experience in Alberta and Manitoba."
+        canonical="/meet-dr-kilgour"
+      />
       <PageHero
         title="Meet Dr. Kilgour"
         subtitle="Neuropsychologist · Alberta, Canada"
@@ -97,7 +100,7 @@ export default function MeetDrKilgour() {
               <VStack spacing={0.5} align="center">
                 <Text
                   fontSize="22px"
-                  fontWeight="800"
+                  fontWeight="600"
                   color="brand.teal"
                   lineHeight="1"
                 >
@@ -129,7 +132,7 @@ export default function MeetDrKilgour() {
 
             <Heading
               fontSize={{ base: "28px", md: "36px" }}
-              fontWeight="800"
+              fontWeight="600"
               color="brand.textDark"
               lineHeight="1.2"
             >
@@ -190,34 +193,6 @@ export default function MeetDrKilgour() {
                 ))}
               </List>
             </Box>
-
-            {/* Inline CTA */}
-            <HStack spacing={4} flexWrap="wrap" pt={2}>
-              <Button
-                as={RouterLink}
-                to="/#contact"
-                variant="cta"
-                size="lg"
-                rightIcon={<FiCalendar />}
-                px={8}
-                py={6}
-                fontSize="md"
-              >
-                Book a Consultation
-              </Button>
-              <Button
-                as="a"
-                href="tel:+15550100100"
-                variant="ctaOutline"
-                size="lg"
-                leftIcon={<FiPhone />}
-                px={8}
-                py={6}
-                fontSize="md"
-              >
-                Call Us
-              </Button>
-            </HStack>
           </VStack>
         </Flex>
       </Box>

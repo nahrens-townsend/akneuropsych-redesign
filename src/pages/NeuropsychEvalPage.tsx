@@ -25,7 +25,7 @@ import HeroImage from "../assets/images/shapelined-_JBKdviweXI-unsplash.jpg";
 import WhatToExpectSection, {
   WhatToExpectStep,
 } from "../components/WhatToExpectSection";
-import base from "@emotion/styled/base";
+import PageMeta from "../components/PageMeta";
 
 const PILLARS = [
   {
@@ -51,15 +51,15 @@ const PILLARS = [
 const EVALUATION_ITEMS = [
   {
     label: "Diagnosis Clarification",
-    text: "Neurological and psychiatric conditions often present with overlapping symptoms. A comprehensive neuropsychological evaluation provides the objective cognitive and behavioural data needed to distinguish between conditions such as traumatic brain injury, dementia, post-concussion syndrome, and mood disorders — bringing clarity where uncertainty has persisted.",
+    text: "Neurological and psychiatric conditions often present with overlapping symptoms. A comprehensive neuropsychological evaluation provides the objective cognitive and behavioural data needed to distinguish between conditions such as traumatic brain injury (TBI), concussion, post-concussion syndrome, dementia, Alzheimer's disease, cognitive decline, and mood disorders — bringing clarity where uncertainty has persisted.",
   },
   {
     label: "Treatment Planning",
-    text: "Evaluation findings are translated into targeted, evidence-based recommendations tailored to your specific cognitive profile. Whether you need accommodations at work or school, medication guidance, or cognitive rehabilitation strategies, the report gives your care team a precise roadmap for intervention.",
+    text: "Evaluation findings are translated into targeted, evidence-based recommendations tailored to your specific cognitive profile. Whether you need accommodations at work or school, medication guidance, or cognitive rehabilitation strategies for TBI recovery or cognitive decline, the report gives your care team a precise roadmap for intervention.",
   },
   {
     label: "Rehabilitation Support",
-    text: "A detailed neuropsychological profile equips your entire rehabilitation team — physiotherapists, occupational therapists, speech-language pathologists, and physicians — with the clinical data they need to direct meaningful, coordinated recovery efforts and monitor progress over time.",
+    text: "A detailed neuropsychological profile equips your entire rehabilitation team — physiotherapists, occupational therapists, speech-language pathologists, and physicians — with the clinical data they need to direct meaningful, coordinated recovery efforts after brain injury, stroke, or progressive neurological conditions, and monitor progress over time.",
   },
 ];
 
@@ -102,6 +102,11 @@ const CORNERSTONES_IMAGE =
 export default function NeuropsychEvalPage() {
   return (
     <main>
+      <PageMeta
+        title="Neuropsychological Evaluation | TBI & Brain Injury Assessment | AK Neuropsych"
+        description="Expert neuropsychological evaluation for traumatic brain injury (TBI), concussion, memory loss, and cognitive decline. Serving Calgary, AB and Winnipeg, MB."
+        canonical="/neuropsychological-evaluation"
+      />
       <PageHero
         title="Neuropsychological Evaluation"
         subtitle="Brain Injury & Neurological Assessment — Alberta, Canada"
@@ -519,6 +524,7 @@ export default function NeuropsychEvalPage() {
                 <FadeUp key={item.label} delay={idx * 0.12}>
                 <Box>
                   <Text
+                    as="h3"
                     fontWeight="600"
                     fontSize={{ base: "16px", md: "24px" }}
                     color="brand.teal"

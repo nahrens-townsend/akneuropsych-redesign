@@ -45,7 +45,8 @@ const PDF_LINKS: ResourceLink[] = [
     href: "https://cpa.ca/docs/File/Publications/FactSheets/PsychologyWorksFactSheet_Insomnia.pdf",
   },
   {
-    label: '"Psychology Works" Fact Sheet: Physical Activity, Mental Health, and Motivation',
+    label:
+      '"Psychology Works" Fact Sheet: Physical Activity, Mental Health, and Motivation',
     href: "https://cpa.ca/docs/File/Publications/FactSheets/PsychologyWorksFactSheet_PhysicalActivity_MentalHealth_Motivation.pdf",
   },
   {
@@ -221,7 +222,7 @@ export default function ResourcesSection() {
             <Heading
               as="h2"
               fontSize={{ base: "28px", md: "36px" }}
-              fontWeight="800"
+              fontWeight="600"
               color="brand.textDark"
             >
               Helpful Resources
@@ -243,19 +244,14 @@ export default function ResourcesSection() {
           <Subsection
             brow="Reading Material"
             title="PDF Fact Sheets"
-            subtitle='Evidence-based fact sheets from the Canadian Psychological Association covering a range of mental health and neurological topics.'
+            subtitle="Evidence-based fact sheets from the Canadian Psychological Association covering a range of mental health and neurological topics."
             links={PDF_LINKS}
             isPdf={true}
             fadeDelay={0.1}
           />
 
           {/* Visual divider — spacing only, no border on the container */}
-          <Box
-            h="1px"
-            bg="brand.misty"
-            opacity={0.6}
-            mx={{ base: 0, md: 4 }}
-          />
+          <Box h="1px" bg="brand.misty" opacity={0.6} mx={{ base: 0, md: 4 }} />
 
           <Subsection
             brow="Professional Organizations"

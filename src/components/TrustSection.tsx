@@ -1,22 +1,27 @@
-import { Box, VStack, HStack, Text, Heading, Flex, Grid, GridItem } from '@chakra-ui/react'
-import { FadeUp, FadeIn } from './FadeIn'
+import {
+  Box,
+  VStack,
+  HStack,
+  Text,
+  Heading,
+  Flex,
+  Grid,
+  GridItem,
+} from "@chakra-ui/react";
+import { FadeUp, FadeIn } from "./FadeIn";
 
 const INSURERS = [
-  'Sun Life',
-  'Manulife',
-  'Great-West Life',
-  'Blue Cross',
-  'Desjardins',
-  'Green Shield',
-]
+  "Sun Life",
+  "Manulife",
+  "Great-West Life",
+  "Blue Cross",
+  "Desjardins",
+  "Green Shield",
+];
 
 export default function TrustSection() {
   return (
-    <Box
-      as="section"
-      py={{ base: '60px', md: '100px' }}
-      bg="#F8FAFB"
-    >
+    <Box as="section" py={{ base: "60px", md: "100px" }} bg="#F8FAFB">
       <Box maxW="1200px" mx="auto" px={{ base: 4, md: 8 }}>
         <FadeUp>
           <VStack spacing={3} mb={12} textAlign="center">
@@ -30,14 +35,15 @@ export default function TrustSection() {
               Insurance &amp; Billing
             </Text>
             <Heading
-              fontSize={{ base: '26px', md: '34px' }}
-              fontWeight="800"
+              as="h2"
+              fontSize={{ base: "26px", md: "34px" }}
+              fontWeight="600"
               color="brand.textDark"
             >
               Direct Billing Available
             </Heading>
             <Text
-              fontSize={{ base: '15px', md: '17px' }}
+              fontSize={{ base: "15px", md: "17px" }}
               color="brand.textDark"
               opacity={0.7}
               maxW="500px"
@@ -50,9 +56,9 @@ export default function TrustSection() {
 
         <Grid
           templateColumns={{
-            base: 'repeat(2, 1fr)',
-            sm: 'repeat(3, 1fr)',
-            md: 'repeat(6, 1fr)',
+            base: "repeat(2, 1fr)",
+            sm: "repeat(3, 1fr)",
+            md: "repeat(6, 1fr)",
           }}
           gap={4}
           mb={10}
@@ -73,10 +79,10 @@ export default function TrustSection() {
                   opacity={0.7}
                   transition="all 0.25s"
                   _hover={{
-                    filter: 'grayscale(0%)',
+                    filter: "grayscale(0%)",
                     opacity: 1,
-                    borderColor: 'brand.seafoam',
-                    boxShadow: '0 4px 16px rgba(96,166,166,0.12)',
+                    borderColor: "brand.seafoam",
+                    boxShadow: "0 4px 16px rgba(96,166,166,0.12)",
                   }}
                 >
                   <Text
@@ -95,16 +101,12 @@ export default function TrustSection() {
 
         {/* Trust badges */}
         <FadeUp delay={0.1}>
-          <Flex
-            justify="center"
-            flexWrap="wrap"
-            gap={6}
-          >
+          <Flex justify="center" flexWrap="wrap" gap={6}>
             {[
-              '✓  Registered Psychologist',
-              '✓  PHIPA Compliant',
-              '✓  Telehealth Approved',
-              '✓  CPA Member',
+              "✓  Registered Psychologist",
+              "✓  PHIPA Compliant",
+              "✓  Telehealth Approved",
+              "✓  CPA Member",
             ].map((badge) => (
               <HStack
                 key={badge}
@@ -125,5 +127,5 @@ export default function TrustSection() {
         </FadeUp>
       </Box>
     </Box>
-  )
+  );
 }

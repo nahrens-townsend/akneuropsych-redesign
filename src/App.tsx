@@ -15,6 +15,7 @@ const NeuropsychEvalPage = lazy(() => import("./pages/NeuropsychEvalPage"));
 const PsychAssessmentPage = lazy(() => import("./pages/PsychAssessmentPage"));
 const FAQPage = lazy(() => import("./pages/FAQPage"));
 const ResourcesPage = lazy(() => import("./pages/ResourcesPage"));
+const ContactPage = lazy(() => import("./pages/ContactPage"));
 
 function App() {
   return (
@@ -69,6 +70,14 @@ function App() {
             element={
               <Suspense fallback={<Box minH="60vh" />}>
                 <ResourcesPage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/contact"
+            element={
+              <Suspense fallback={<Box minH="60vh" />}>
+                <ContactPage />
               </Suspense>
             }
           />

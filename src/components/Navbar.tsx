@@ -116,7 +116,11 @@ function ServicesDropdown({ isAnyActive }: { isAnyActive: boolean }) {
         bg={isAnyActive ? "brand.misty" : "transparent"}
         cursor="pointer"
         _hover={{ color: "brand.teal", bg: "gray.50" }}
-        _focusVisible={{ outline: "2px solid", outlineColor: "brand.teal", outlineOffset: "2px" }}
+        _focusVisible={{
+          outline: "2px solid",
+          outlineColor: "brand.teal",
+          outlineOffset: "2px",
+        }}
         transition="all 0.15s"
         aria-haspopup="true"
         aria-expanded={open}
@@ -172,7 +176,11 @@ function ServicesDropdown({ isAnyActive }: { isAnyActive: boolean }) {
               color: "brand.teal",
               textDecoration: "none",
             }}
-            _focusVisible={{ bg: "brand.misty", color: "brand.teal", outline: "none" }}
+            _focusVisible={{
+              bg: "brand.misty",
+              color: "brand.teal",
+              outline: "none",
+            }}
             transition="all 0.12s"
             role="menuitem"
             onClick={() => setOpen(false)}
@@ -200,7 +208,7 @@ function Logo() {
           justifyContent="center"
           flexShrink={0}
         >
-          <Text color="white" fontWeight="800" fontSize="sm" letterSpacing="0">
+          <Text color="white" fontWeight="600" fontSize="sm" letterSpacing="0">
             AK
           </Text>
         </Box>
@@ -284,7 +292,7 @@ export default function Navbar() {
             {/* Contact CTA */}
             <Link
               as={RouterLink}
-              to="/#contact"
+              to="/contact"
               ml={3}
               px={5}
               py="9px"
@@ -322,7 +330,7 @@ export default function Navbar() {
       {/* Mobile Drawer */}
       <Drawer isOpen={isOpen} placement="right" onClose={onClose} size="xs">
         <DrawerOverlay />
-        <DrawerContent>
+        <DrawerContent background="white">
           <DrawerCloseButton mt={1} />
           <DrawerBody pt={14} pb={8} px={6}>
             <Logo />
@@ -386,7 +394,7 @@ export default function Navbar() {
               <Box pt={2}>
                 <Link
                   as={RouterLink}
-                  to="/#contact"
+                  to="/contact"
                   display="block"
                   textAlign="center"
                   px={5}

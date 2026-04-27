@@ -26,13 +26,13 @@ export default function CTABanner() {
               Take the First Step
             </Text>
             <Heading
-              fontSize={{ base: "28px", md: "40px", lg: "48px" }}
+              fontSize={{ base: "28px", md: "36px" }}
               fontWeight="600"
               color="brand.textDark"
               lineHeight="1.15"
               maxW="720px"
             >
-              Get Your Brain Back on Track
+              Have questions after reading? Let’s talk.
             </Heading>
             <Text
               fontSize={{ base: "16px", md: "18px" }}
@@ -46,7 +46,7 @@ export default function CTABanner() {
             </Text>
             <Button
               as="a"
-              href="/#contact"
+              href="/contact"
               variant="cta"
               size="lg"
               rightIcon={<FiCalendar />}

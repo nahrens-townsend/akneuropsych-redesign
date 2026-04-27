@@ -6,28 +6,52 @@ import { FadeUp } from "./FadeIn";
 
 const FAQ_ITEMS = [
   {
-    q: "What is a neuropsychological evaluation?",
-    a: "A neuropsychological evaluation is a comprehensive, standardized assessment of brain-behavior relationships. It measures cognitive abilities such as memory, attention, language, processing speed, and executive function — providing a detailed picture of how your brain is working and where support may be beneficial.",
+    q: "What is the difference between a neuropsychological assessment and a psychological assessment?",
+    a: "A neuropsychological assessment includes both cognitive and psychological evaluation / testing. This type of assessment is recommended when a person has concerns regarding cognitive function (thinking abilities, such as attention, memory, and problem solving). This assessment is designed to determine not only diagnosis but also the root cause of cognitive concerns (e.g., issues related more to emotional/psychological factors or to neurological factors).\n\nPsychological assessment is recommended when a person has concerns regarding mental health. This assessment focuses only on psychological / emotional / personality evaluation.",
   },
   {
-    q: "How long does the assessment process take?",
-    a: "Most evaluations are completed across one or two sessions, typically ranging from four to eight hours of testing in total. The exact length depends on the referral question, your age, and the complexity of your concerns. We schedule sessions at a pace that is comfortable for you.",
+    q: "How long will my assessment take?",
+    a: "Assessments vary in length to complete, in part, because different people work at different paces on the various tests. On average, a neuropsychological assessment takes 6 – 8 hours. On average, a psychological assessment takes 3 – 5 hours. The assessment can be completed over more than one day.",
   },
   {
-    q: "Do you accept insurance?",
-    a: "We are currently an out-of-network provider. We can provide a detailed superbill after your evaluation that you may submit to your insurance carrier for potential reimbursement. We recommend contacting your insurer in advance to understand your out-of-network benefits for neuropsychological testing.",
+    q: "May I take breaks?",
+    a: "Absolutely. A lunch break is always scheduled but additional breaks can be taken as often as needed and when requested.",
   },
   {
-    q: "What age groups do you work with?",
-    a: "We work with children, adolescents, and adults across the lifespan. Whether you are seeking answers for a child struggling in school, a young adult navigating a new diagnosis, or an older adult concerned about memory, we have the expertise to help.",
+    q: "Do I need to bring anything to the appointment?",
+    a: "Yes. It is important to bring any required aids or items that you find helpful, such as glasses, reading glasses, hearing aids, an Obus Form (for seating comfort), etc. Also ensure to bring a list of your current medications. Some people may choose to complete the Intake Questionnaire ahead of time and bring this to the assessment appointment. Finally, you may choose to bring lunch / snacks, or money to purchase food at nearby stores.",
   },
   {
-    q: "How long until I receive my results?",
-    a: "You can typically expect a written report within two to three weeks of completing your evaluation. A feedback session is included to walk you through the findings, answer your questions, and discuss next steps — so you never receive a report without support in understanding it.",
+    q: "Is there anything I can do to prepare?",
+    a: "There is no way to study for this type of testing and no preparation for the testing is required. The tests are not like school exams. However, you can prepare by being well rested (good sleep the night before) and alert.",
   },
   {
-    q: "Do I need a referral to schedule an evaluation?",
-    a: "No referral is required to schedule directly with our practice. However, if your insurance requires one for reimbursement purposes, we recommend obtaining a referral from your primary care physician or specialist before your appointment.",
+    q: "Can I get a copy of my tests?",
+    a: "The actual tests can not be released. However, you will have access to the results and the report either directly during a follow-up feedback session or through requesting a copy of your report.",
+  },
+  {
+    q: "What conditions can a neuropsychological assessment help diagnose or clarify?",
+    a: "A neuropsychological assessment can help clarify concerns related to conditions such as ADHD, learning disabilities, concussion or traumatic brain injury, dementia or mild cognitive impairment, and the cognitive effects of mental health conditions like depression and anxiety.",
+  },
+  {
+    q: "What should I expect during the testing session?",
+    a: "You can expect a combination of clinical interview and structured testing tasks that assess memory, attention, language, problem-solving, and other cognitive skills. The session includes breaks as needed and is paced to reduce fatigue while collecting accurate results.",
+  },
+  {
+    q: "Will I be diagnosed during the assessment?",
+    a: "A diagnosis is not always immediate. Results are carefully integrated with your history, behavioural observations, and testing data. A diagnostic impression is typically provided as part of your final report and feedback session.",
+  },
+  {
+    q: "Can I drive myself to and from the appointment?",
+    a: "Yes, most individuals are able to drive themselves to and from the appointment. However, because the testing can be mentally tiring, some people prefer to arrange alternative transportation afterward.",
+  },
+  {
+    q: "Do I need to stop taking my medication before testing?",
+    a: "In most cases, you should continue taking your medications as prescribed unless specifically instructed otherwise by your referring physician or the neuropsychologist. If medication changes are needed for testing validity, you will be advised ahead of time.",
+  },
+  {
+    q: "What happens after the assessment is completed?",
+    a: "After testing, your results are scored, interpreted, and integrated into a comprehensive report. You will then attend a feedback session where findings are explained, questions are answered, and recommendations are provided for next steps or supports.",
   },
 ];
 
@@ -42,7 +66,14 @@ interface AccordionItemProps {
   index: number;
 }
 
-function AccordionItem({ question, answer, isOpen, onToggle, isLast, index }: AccordionItemProps) {
+function AccordionItem({
+  question,
+  answer,
+  isOpen,
+  onToggle,
+  isLast,
+  index,
+}: AccordionItemProps) {
   const shouldReduce = useReducedMotion();
   const buttonId = `faq-btn-${index}`;
   const panelId = `faq-panel-${index}`;
@@ -133,7 +164,37 @@ export default function FAQSection() {
   };
 
   return (
-    <Box as="section" py={{ base: "60px", md: "100px" }} bg="white">
+    <Box
+      as="section"
+      pos="relative"
+      py={{ base: "60px", md: "100px" }}
+      bg="white"
+      overflowX={"hidden"}
+      position={"relative"}
+      _before={{
+        content: '""',
+        position: "absolute",
+        top: { base: "-80px", md: "80px" },
+        left: "-80px",
+        width: "200px",
+        height: "200px",
+        bg: "brand.teal",
+        borderRadius: "50%",
+        opacity: 0.08,
+      }}
+      _after={{
+        content: '""',
+        position: "absolute",
+        display: { base: "none", md: "inherit" },
+        bottom: "80px",
+        right: "-80px",
+        width: "200px",
+        height: "200px",
+        bg: "brand.teal",
+        borderRadius: "50%",
+        opacity: 0.08,
+      }}
+    >
       <Box maxW="800px" mx="auto" px={{ base: 4, md: 8 }}>
         <FadeUp>
           <VStack spacing={3} mb={12} textAlign="center">
@@ -149,7 +210,7 @@ export default function FAQSection() {
             <Heading
               as="h2"
               fontSize={{ base: "28px", md: "36px" }}
-              fontWeight="800"
+              fontWeight="600"
               color="brand.textDark"
             >
               Frequently Asked Questions

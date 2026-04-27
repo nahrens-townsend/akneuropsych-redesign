@@ -25,7 +25,7 @@ import type { WhatToExpectStep } from "../components/WhatToExpectSection";
 import screeningImage from "../assets/images/raspopova-marina-yL96L498NDM-unsplash.jpg";
 import cornerstonesImage from "../assets/images/services-2.jpg";
 import HeroImage from "../assets/images/pawel-czerwinski-VIoy52Jx6Cg-unsplash.jpg";
-import base from "@emotion/styled/base";
+import PageMeta from "../components/PageMeta";
 
 const PILLARS = [
   {
@@ -50,16 +50,16 @@ const PILLARS = [
 
 const ASSESSMENT_ITEMS = [
   {
-    label: "Emotional Functioning",
-    text: "The assessment examines how you experience, regulate, and express emotions — identifying patterns of anxiety, depression, trauma responses, or emotional reactivity that may be affecting your quality of life and relationships. Understanding these patterns is the essential first step toward meaningful, lasting change.",
+    label: "Emotional Functioning & Mood Disorders",
+    text: "The assessment examines how you experience, regulate, and express emotions — identifying patterns of anxiety, depression, trauma responses, or emotional reactivity that may be affecting your quality of life and relationships. For individuals with ADHD, autism spectrum disorder, or learning disabilities, emotional regulation challenges are often a central concern that the assessment helps clarify.",
   },
   {
-    label: "Personality & Coping Styles",
-    text: "Formal psychological testing provides a validated, structured portrait of your personality and the ways you characteristically respond to stress, adversity, and interpersonal challenges. This understanding informs targeted treatment, builds self-awareness, and highlights both vulnerabilities and areas of resilience.",
+    label: "Personality, ADHD & Neurodevelopmental Profiles",
+    text: "Formal psychological testing provides a validated, structured portrait of your personality and the ways you characteristically respond to stress, adversity, and interpersonal challenges. Assessments for ADHD, autism spectrum disorder (ASD), and other neurodevelopmental conditions identify executive functioning deficits and learning disorders that inform targeted treatment and accommodation planning.",
   },
   {
     label: "Clinical Interview & Written Report",
-    text: "A thorough clinical interview anchors the entire assessment, gathering personal history, context, and the concerns most relevant to you. All findings are compiled into a detailed written report, reviewed with you in a dedicated follow-up session so that every result translates into practical, actionable guidance.",
+    text: "A thorough clinical interview anchors the entire assessment, gathering personal history, context, and the concerns most relevant to you. All findings are compiled into a detailed written report, reviewed with you in a dedicated follow-up session so that every result translates into practical, actionable guidance — including recommendations for school, work, and daily functioning.",
   },
 ];
 
@@ -99,6 +99,11 @@ const WHAT_TO_EXPECT_STEPS: WhatToExpectStep[] = [
 export default function PsychAssessmentPage() {
   return (
     <main>
+      <PageMeta
+        title="Psychological Assessment | ADHD, Autism & Learning Disorders | AK Neuropsych"
+        description="Comprehensive psychological assessments for ADHD, autism spectrum disorder, learning disabilities, and executive functioning. Calgary, AB and Winnipeg, MB."
+        canonical="/psychological-assessments"
+      />
       <PageHero
         title="Psychological Assessment"
         subtitle="Emotional & Personality Evaluation — Alberta, Canada"
@@ -517,6 +522,7 @@ export default function PsychAssessmentPage() {
                 <FadeUp key={item.label} delay={idx * 0.12}>
                 <Box>
                   <Text
+                    as="h3"
                     fontWeight="600"
                     fontSize={{ base: "16px", md: "24px" }}
                     color="brand.teal"
