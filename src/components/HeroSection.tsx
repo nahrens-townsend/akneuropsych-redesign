@@ -34,7 +34,7 @@ export default function HeroSection() {
         maxW="1200px"
         mx="auto"
         px={{ base: 4, md: 8 }}
-        py={{ base: "100px", md: "100px" }}
+        py={{ base: "60px", md: "100px" }}
         direction="column"
         align={"center"}
         position="relative"

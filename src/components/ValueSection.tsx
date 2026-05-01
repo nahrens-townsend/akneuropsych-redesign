@@ -71,7 +71,10 @@ export default function ValueSection() {
           </VStack>
         </FadeUp>
 
-        <Grid templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }} gap={8}>
+        <Grid
+          templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }}
+          gap={{ base: "12", md: "8" }}
+        >
           {VALUES.map((v, idx) => (
             <GridItem key={v.title}>
               <FadeUp delay={idx * 0.12} style={{ height: "100%" }}>
@@ -89,15 +92,16 @@ export default function ValueSection() {
                     transform: "translateY(-4px)",
                   }}
                 >
-                  <VStack align="flex-start" spacing={4}>
+                  <VStack align="center" spacing={4}>
                     <Box
-                      w="52px"
-                      h="52px"
+                      w="66px"
+                      h="66px"
                       borderRadius="14px"
                       bg={v.bg}
                       display="flex"
                       alignItems="center"
                       justifyContent="center"
+                      marginTop={"-65px"}
                     >
                       <Icon as={v.icon} color={v.color} boxSize={6} />
                     </Box>
@@ -114,6 +118,7 @@ export default function ValueSection() {
                       color="brand.textDark"
                       opacity={0.75}
                       lineHeight="1.7"
+                      textAlign={"center"}
                     >
                       {v.description}
                     </Text>

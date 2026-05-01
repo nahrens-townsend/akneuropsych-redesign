@@ -254,6 +254,7 @@ export default function Navbar() {
         left={0}
         right={0}
         zIndex={1000}
+        py={"10px"}
         bg="white"
         borderBottom="1px solid"
         borderColor={scrolled ? "transparent" : "gray.100"}
