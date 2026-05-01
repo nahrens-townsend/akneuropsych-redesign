@@ -34,7 +34,7 @@ export default function HeroSection() {
         maxW="1200px"
         mx="auto"
         px={{ base: 4, md: 8 }}
-        py={{ base: "100px", md: "148px" }}
+        py={{ base: "100px", md: "100px" }}
         direction="column"
         align={"center"}
         position="relative"
@@ -89,23 +89,6 @@ export default function HeroSection() {
               cognitive testing with Dr. Andrea Kilgour in Calgary, AB — a
               biopsychosocial approach designed to help you understand and
               reclaim your brain health.
-            </Text>
-          </HeroFade>
-
-          <HeroFade delay={0.3}>
-            <Text
-              fontSize={{ base: "15px", md: "17px" }}
-              color="whiteAlpha.800"
-              lineHeight="1.8"
-              maxW="1000px"
-            >
-              Whether you're navigating attention challenges, memory concerns,
-              recovery from traumatic brain injury or concussion, or seeking
-              clarity on a recent diagnosis, our practice provides a thorough
-              and compassionate evaluation process that places your story at the
-              center of care. Serving individuals across Alberta and Manitoba
-              with personalized treatment planning rooted in the latest
-              neuropsychological research.
             </Text>
           </HeroFade>
 
