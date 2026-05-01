@@ -10,15 +10,16 @@ import {
 } from "@chakra-ui/react";
 import { FiCalendar } from "react-icons/fi";
 import { HeroFade } from "./FadeIn";
+import heroImage from "../assets/images/home-hero.jpg";
 
 export default function HeroSection() {
   return (
     <Box
       id="hero"
       position="relative"
-      bgImage="url('https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=1920&q=80')"
+      bgImage={`url(${heroImage})`}
       bgSize="cover"
-      bgPosition="center"
+      bgPos={{ base: "55%", md: "top" }}
       overflow="hidden"
     >
       {/* Dark gradient overlay for text contrast */}
